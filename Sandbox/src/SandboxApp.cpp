@@ -10,12 +10,19 @@ public:
 
 	void OnUpdate() override
 	{
-		LS_INFO("ExampleLayer::Update");
+		if (Lisa::Input::IsKeyPressed(LS_KEY_TAB))
+			LS_TRACE("Tab key is pressed (poll)!");
 	}
 
 	void OnEvent(Lisa::Event& event) override
 	{
-		LS_TRACE("{0}", event);
+		if (event.GetEventType() == Lisa::EventType::KeyPressed)
+		{
+			Lisa::KeyPressedEvent& e = (Lisa::KeyPressedEvent&)event;
+			if (e.GetKeyCode() == LS_KEY_TAB)
+				LS_TRACE("Tab key is pressed (event)!");
+			LS_TRACE("{0}", (char)e.GetKeyCode());
+		}
 	}
 
 };
