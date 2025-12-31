@@ -18,9 +18,9 @@ public:
 	
 	virtual void OnImGuiRender() override
 	{
-		//ImGui::Begin("Test");
-		//ImGui::Text("Lisa Engine");
-		//ImGui::End();
+		ImGui::Begin("Test");
+		ImGui::Text("Lisa Engine");
+		ImGui::End();
 	}
 
 	void OnEvent(Lisa::Event& event) override
