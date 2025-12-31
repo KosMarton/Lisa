@@ -7,6 +7,8 @@
 #include "Lisa/Events/Event.h"
 #include "Lisa/Events/ApplicationEvent.h"
 
+#include "Lisa/ImGui/ImGuiLayer.h"
+
 namespace Lisa {
 
 	class LISA_API Application
@@ -29,6 +31,7 @@ namespace Lisa {
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 	private:

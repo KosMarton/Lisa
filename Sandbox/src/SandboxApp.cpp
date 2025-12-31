@@ -1,5 +1,7 @@
 #include <Lisa.h>
 
+#include "imgui/imgui.h"
+
 class ExampleLayer : public Lisa::Layer
 {
 public:
@@ -12,6 +14,13 @@ public:
 	{
 		if (Lisa::Input::IsKeyPressed(LS_KEY_TAB))
 			LS_TRACE("Tab key is pressed (poll)!");
+	}
+	
+	virtual void OnImGuiRender() override
+	{
+		//ImGui::Begin("Test");
+		//ImGui::Text("Lisa Engine");
+		//ImGui::End();
 	}
 
 	void OnEvent(Lisa::Event& event) override
@@ -33,7 +42,6 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Lisa::ImGuiLayer());
 	}
 
 	~Sandbox()
