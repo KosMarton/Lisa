@@ -48,7 +48,7 @@ public:
 	{
 
 	}
-	
+
 };
 
 Lisa::Application* Lisa::CreateApplication()
