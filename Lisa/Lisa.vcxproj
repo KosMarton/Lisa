@@ -165,9 +165,11 @@
     <ClInclude Include="src\Lisa\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Lisa\Renderer\Renderer.h" />
     <ClInclude Include="src\Lisa\Renderer\Shader.h" />
+    <ClInclude Include="src\Lisa\Renderer\VertexArray.h" />
     <ClInclude Include="src\Lisa\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\lspch.h" />
@@ -601,8 +603,10 @@
     <ClCompile Include="src\Lisa\Renderer\Buffer.cpp" />
     <ClCompile Include="src\Lisa\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Lisa\Renderer\Shader.cpp" />
+    <ClCompile Include="src\Lisa\Renderer\VertexArray.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\lspch.cpp">
