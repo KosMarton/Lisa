@@ -12,6 +12,17 @@
 
 #include "Lisa/ImGui/ImGuiLayer.h"
 
-// ---Entry Point---
+// ---Renderer--------------------------------
+#include "Lisa/Renderer/Renderer.h"
+#include "Lisa/Renderer/RenderCommand.h"
+
+#include "Lisa/Renderer/Buffer.h"
+#include "Lisa/Renderer/Shader.h"
+#include "Lisa/Renderer/VertexArray.h"
+
+#include "Lisa/Renderer/OrthographicCamera.h"
+// -------------------------------------------
+
+// ---Entry Point-----------------------------
 #include "Lisa/EntryPoint.h"
-// -----------------
+// -------------------------------------------
