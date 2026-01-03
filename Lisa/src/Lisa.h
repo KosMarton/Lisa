@@ -6,6 +6,8 @@
 #include "Lisa/Layer.h"
 #include "Lisa/Log.h"
 
+#include "Lisa/Core/Timestep.h"
+
 #include "Lisa/Input.h"
 #include "Lisa/KeyCodes.h"
 #include "Lisa/MouseButtonCodes.h"

@@ -1368,6 +1368,7 @@
     <ClInclude Include="src\Lisa\Renderer\RenderCommand.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="src\Lisa\Renderer\OrthographicCamera.h" />
+    <ClInclude Include="src\Lisa\Core\Timestep.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lisa\Application.cpp">

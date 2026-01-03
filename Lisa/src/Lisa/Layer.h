@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Lisa/Core.h"
+#include "Lisa/Core/Timestep.h"
 #include "Lisa/Events/Event.h"
 
 namespace Lisa {
@@ -13,7 +14,7 @@ namespace Lisa {
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Timestep ts) {}
 		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Event& event) {}
 

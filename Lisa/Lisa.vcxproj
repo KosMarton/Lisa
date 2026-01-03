@@ -149,6 +149,7 @@
     <ClInclude Include="src\Lisa.h" />
     <ClInclude Include="src\Lisa\Application.h" />
     <ClInclude Include="src\Lisa\Core.h" />
+    <ClInclude Include="src\Lisa\Core\Timestep.h" />
     <ClInclude Include="src\Lisa\EntryPoint.h" />
     <ClInclude Include="src\Lisa\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Lisa\Events\Event.h" />
