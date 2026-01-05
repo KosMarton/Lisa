@@ -164,6 +164,7 @@ public:
 		m_TextureShader.reset(Lisa::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
 
 		m_Texture = Lisa::Texture2D::Create("assets/textures/Checkerboard.png");
+		m_BlendTexture = Lisa::Texture2D::Create("assets/textures/DababyCar.png");
 
 		std::dynamic_pointer_cast<Lisa::OpenGLShader>(m_TextureShader)->Bind();
 		std::dynamic_pointer_cast<Lisa::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
@@ -211,6 +212,8 @@ public:
 
 		m_Texture->Bind();
 		Lisa::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		m_BlendTexture->Bind();
+		Lisa::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		// Triangle
 		// Lisa::Renderer::Submit(m_Shader, m_VertexArray);
@@ -235,7 +238,7 @@ private:
 	Lisa::Ref<Lisa::Shader> m_FlatColorShader, m_TextureShader;
 	Lisa::Ref<Lisa::VertexArray> m_SquareVA;
 
-	Lisa::Ref<Lisa::Texture2D> m_Texture;
+	Lisa::Ref<Lisa::Texture2D> m_Texture, m_BlendTexture;
 
 	Lisa::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
