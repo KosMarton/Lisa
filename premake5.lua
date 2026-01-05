@@ -17,6 +17,7 @@ IncludeDir["GLFW"] = "Lisa/vendor/GLFW/include"
 IncludeDir["Glad"] = "Lisa/vendor/Glad/include"
 IncludeDir["ImGui"] = "Lisa/vendor/imgui"
 IncludeDir["glm"] = "Lisa/vendor/glm"
+IncludeDir["stb_image"] = "Lisa/vendor/stb_image"
 
 include "Lisa/vendor/GLFW"
 include "Lisa/vendor/Glad"
@@ -39,6 +40,8 @@ project "Lisa"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
@@ -55,7 +58,8 @@ project "Lisa"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}"
 	}
 
 	links

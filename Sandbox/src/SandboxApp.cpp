@@ -13,7 +13,7 @@ public:
 	ExampleLayer()
 		: Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f), m_CameraPosition(0.0f)
 	{
-		m_VertexArray.reset(Lisa::VertexArray::Create()); // TRIANGLE
+		m_VertexArray.reset(Lisa::VertexArray::Create());
 
 		float vertices[3 * 7] = {
 			-0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
@@ -21,7 +21,7 @@ public:
 			 0.0f,  0.5f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f
 		};
 
-		std::shared_ptr<Lisa::VertexBuffer> vertexBuffer;
+		Lisa::Ref<Lisa::VertexBuffer> vertexBuffer;
 		vertexBuffer.reset(Lisa::VertexBuffer::Create(vertices, sizeof(vertices)));
 		Lisa::BufferLayout layout = {
 				{ Lisa::ShaderDataType::Float3, "a_Position" },
@@ -31,28 +31,29 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		uint32_t indicies[3] = { 0, 1, 2 };
-		std::shared_ptr<Lisa::IndexBuffer> indexBuffer;
+		Lisa::Ref<Lisa::IndexBuffer> indexBuffer;
 		indexBuffer.reset(Lisa::IndexBuffer::Create(indicies, sizeof(indicies) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
-		m_SquareVA.reset(Lisa::VertexArray::Create()); // SQUARE
+		m_SquareVA.reset(Lisa::VertexArray::Create());
 
-		float squareVertices[3 * 4] = {
-			-0.5f, -0.5f, 0.0f,
-			 0.5f, -0.5f, 0.0f,
-			 0.5f,  0.5f, 0.0f,
-			-0.5f,  0.5f, 0.0f
+		float squareVertices[5 * 4] = {
+			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
+			 0.5f, -0.5f, 0.0f, 1.0f, 0.0f,
+			 0.5f,  0.5f, 0.0f, 1.0f, 1.0f,
+			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
 
-		std::shared_ptr<Lisa::VertexBuffer> squareVB;
+		Lisa::Ref<Lisa::VertexBuffer> squareVB;
 		squareVB.reset(Lisa::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 		squareVB->SetLayout({
-				{ Lisa::ShaderDataType::Float3, "a_Position" }
-			});
+				{ Lisa::ShaderDataType::Float3, "a_Position" },
+				{ Lisa::ShaderDataType::Float2, "a_TexCoord" }
+			 });
 		m_SquareVA->AddVertexBuffer(squareVB);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		std::shared_ptr<Lisa::IndexBuffer> squareIB;
+		Lisa::Ref<Lisa::IndexBuffer> squareIB;
 		squareIB.reset(Lisa::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
 		m_SquareVA->SetIndexBuffer(squareIB);
 
@@ -126,6 +127,46 @@ public:
 		)";
 
 		m_FlatColorShader.reset(Lisa::Shader::Create(flatColorShaderVertexSrc, flatColorShaderFragmentSrc));
+
+		std::string textureShaderVertexSrc = R"(
+			#version 330 core
+
+			layout(location = 0) in vec3 a_Position;
+			layout(location = 1) in vec2 a_TexCoord;
+
+			uniform mat4 u_ViewProjection;
+			uniform mat4 u_Transform;
+
+			out vec2 v_TexCoord;			
+
+			void main()
+			{
+				v_TexCoord = a_TexCoord;
+				gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);
+			}
+		)";
+
+		std::string textureShaderFragmentSrc = R"(
+			#version 330 core
+
+			layout(location = 0) out vec4 color;
+
+			in vec2 v_TexCoord;
+
+			uniform sampler2D u_Texture;
+			
+			void main()
+			{
+				color = texture(u_Texture, v_TexCoord);
+			}
+		)";
+
+		m_TextureShader.reset(Lisa::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
+
+		m_Texture = Lisa::Texture2D::Create("assets/textures/Checkerboard.png");
+
+		std::dynamic_pointer_cast<Lisa::OpenGLShader>(m_TextureShader)->Bind();
+		std::dynamic_pointer_cast<Lisa::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
 	}
 
 	void OnUpdate(Lisa::Timestep ts) override
@@ -168,7 +209,11 @@ public:
 			}
 		}
 
-		Lisa::Renderer::Submit(m_Shader, m_VertexArray);
+		m_Texture->Bind();
+		Lisa::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+
+		// Triangle
+		// Lisa::Renderer::Submit(m_Shader, m_VertexArray);
 
 		Lisa::Renderer::EndScene();
 	}
@@ -184,11 +229,13 @@ public:
 	{
 	}
 private:
-	std::shared_ptr<Lisa::Shader> m_Shader;
-	std::shared_ptr<Lisa::VertexArray> m_VertexArray;
+	Lisa::Ref<Lisa::Shader> m_Shader;
+	Lisa::Ref<Lisa::VertexArray> m_VertexArray;
 
-	std::shared_ptr<Lisa::Shader> m_FlatColorShader;
-	std::shared_ptr<Lisa::VertexArray> m_SquareVA;
+	Lisa::Ref<Lisa::Shader> m_FlatColorShader, m_TextureShader;
+	Lisa::Ref<Lisa::VertexArray> m_SquareVA;
+
+	Lisa::Ref<Lisa::Texture2D> m_Texture;
 
 	Lisa::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
