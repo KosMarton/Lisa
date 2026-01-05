@@ -19,9 +19,12 @@ IncludeDir["ImGui"] = "Lisa/vendor/imgui"
 IncludeDir["glm"] = "Lisa/vendor/glm"
 IncludeDir["stb_image"] = "Lisa/vendor/stb_image"
 
-include "Lisa/vendor/GLFW"
-include "Lisa/vendor/Glad"
-include "Lisa/vendor/imgui"
+group "Dependencies"
+	include "Lisa/vendor/GLFW"
+	include "Lisa/vendor/Glad"
+	include "Lisa/vendor/imgui"
+
+group ""
 
 project "Lisa"
 	location "Lisa"

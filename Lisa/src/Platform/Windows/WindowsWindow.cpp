@@ -107,7 +107,6 @@ namespace Lisa {
 
 			KeyTypedEvent event(keycode);
 			data.EventCallback(event);
-
 		});
 
 		glfwSetMouseButtonCallback(m_Window, [](GLFWwindow* window, int button, int action, int mods)

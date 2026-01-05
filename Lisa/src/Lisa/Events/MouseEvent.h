@@ -81,8 +81,7 @@ namespace Lisa {
 	{
 	public:
 		MouseButtonReleasedEvent(int button)
-			: MouseButtonEvent(button) {
-		}
+			: MouseButtonEvent(button) {}
 
 		std::string ToString() const override
 		{

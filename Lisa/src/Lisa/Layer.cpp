@@ -8,9 +8,4 @@ namespace Lisa {
 	{
 	}
 
-	Layer::~Layer()
-	{
-
-	}
-
 }
