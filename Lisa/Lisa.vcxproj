@@ -162,6 +162,7 @@
     <ClInclude Include="src\Lisa\LayerStack.h" />
     <ClInclude Include="src\Lisa\Log.h" />
     <ClInclude Include="src\Lisa\MouseButtonCodes.h" />
+    <ClInclude Include="src\Lisa\OrthographicCameraController.h" />
     <ClInclude Include="src\Lisa\Renderer\Buffer.h" />
     <ClInclude Include="src\Lisa\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Lisa\Renderer\OrthographicCamera.h" />
@@ -609,6 +610,7 @@
     <ClCompile Include="src\Lisa\Layer.cpp" />
     <ClCompile Include="src\Lisa\LayerStack.cpp" />
     <ClCompile Include="src\Lisa\Log.cpp" />
+    <ClCompile Include="src\Lisa\OrthographicCameraController.cpp" />
     <ClCompile Include="src\Lisa\Renderer\Buffer.cpp" />
     <ClCompile Include="src\Lisa\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="src\Lisa\Renderer\RenderCommand.cpp" />

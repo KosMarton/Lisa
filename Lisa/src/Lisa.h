@@ -11,6 +11,7 @@
 #include "Lisa/Input.h"
 #include "Lisa/KeyCodes.h"
 #include "Lisa/MouseButtonCodes.h"
+#include "Lisa/OrthographicCameraController.h"
 
 #include "Lisa/ImGui/ImGuiLayer.h"
 
