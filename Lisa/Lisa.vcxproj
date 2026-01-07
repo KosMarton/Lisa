@@ -147,32 +147,32 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Lisa.h" />
-    <ClInclude Include="src\Lisa\Application.h" />
-    <ClInclude Include="src\Lisa\Core.h" />
+    <ClInclude Include="src\Lisa\Core\Application.h" />
+    <ClInclude Include="src\Lisa\Core\Core.h" />
+    <ClInclude Include="src\Lisa\Core\EntryPoint.h" />
+    <ClInclude Include="src\Lisa\Core\Input.h" />
+    <ClInclude Include="src\Lisa\Core\KeyCodes.h" />
+    <ClInclude Include="src\Lisa\Core\Layer.h" />
+    <ClInclude Include="src\Lisa\Core\LayerStack.h" />
+    <ClInclude Include="src\Lisa\Core\Log.h" />
+    <ClInclude Include="src\Lisa\Core\MouseButtonCodes.h" />
     <ClInclude Include="src\Lisa\Core\Timestep.h" />
-    <ClInclude Include="src\Lisa\EntryPoint.h" />
+    <ClInclude Include="src\Lisa\Core\Window.h" />
     <ClInclude Include="src\Lisa\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Lisa\Events\Event.h" />
     <ClInclude Include="src\Lisa\Events\KeyEvent.h" />
     <ClInclude Include="src\Lisa\Events\MouseEvent.h" />
     <ClInclude Include="src\Lisa\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\Lisa\Input.h" />
-    <ClInclude Include="src\Lisa\KeyCodes.h" />
-    <ClInclude Include="src\Lisa\Layer.h" />
-    <ClInclude Include="src\Lisa\LayerStack.h" />
-    <ClInclude Include="src\Lisa\Log.h" />
-    <ClInclude Include="src\Lisa\MouseButtonCodes.h" />
-    <ClInclude Include="src\Lisa\OrthographicCameraController.h" />
     <ClInclude Include="src\Lisa\Renderer\Buffer.h" />
     <ClInclude Include="src\Lisa\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Lisa\Renderer\OrthographicCamera.h" />
+    <ClInclude Include="src\Lisa\Renderer\OrthographicCameraController.h" />
     <ClInclude Include="src\Lisa\Renderer\RenderCommand.h" />
     <ClInclude Include="src\Lisa\Renderer\Renderer.h" />
     <ClInclude Include="src\Lisa\Renderer\RendererAPI.h" />
     <ClInclude Include="src\Lisa\Renderer\Shader.h" />
     <ClInclude Include="src\Lisa\Renderer\Texture.h" />
     <ClInclude Include="src\Lisa\Renderer\VertexArray.h" />
-    <ClInclude Include="src\Lisa\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
@@ -604,15 +604,15 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Lisa\Application.cpp" />
+    <ClCompile Include="src\Lisa\Core\Application.cpp" />
+    <ClCompile Include="src\Lisa\Core\Layer.cpp" />
+    <ClCompile Include="src\Lisa\Core\LayerStack.cpp" />
+    <ClCompile Include="src\Lisa\Core\Log.cpp" />
     <ClCompile Include="src\Lisa\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Lisa\ImGui\ImGuiLayer.cpp" />
-    <ClCompile Include="src\Lisa\Layer.cpp" />
-    <ClCompile Include="src\Lisa\LayerStack.cpp" />
-    <ClCompile Include="src\Lisa\Log.cpp" />
-    <ClCompile Include="src\Lisa\OrthographicCameraController.cpp" />
     <ClCompile Include="src\Lisa\Renderer\Buffer.cpp" />
     <ClCompile Include="src\Lisa\Renderer\OrthographicCamera.cpp" />
+    <ClCompile Include="src\Lisa\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="src\Lisa\Renderer\RenderCommand.cpp" />
     <ClCompile Include="src\Lisa\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Lisa\Renderer\RendererAPI.cpp" />

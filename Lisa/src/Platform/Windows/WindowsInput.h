@@ -1,6 +1,6 @@
 #pragma once
 	
-#include "Lisa/Input.h"
+#include "Lisa/Core/Input.h"
 
 namespace Lisa {
 

@@ -2,16 +2,16 @@
 
 // For use by Lisa applications
 
-#include "Lisa/Application.h"
-#include "Lisa/Layer.h"
-#include "Lisa/Log.h"
+#include "Lisa/Core/Application.h"
+#include "Lisa/Core/Layer.h"
+#include "Lisa/Core/Log.h"
 
 #include "Lisa/Core/Timestep.h"
 
-#include "Lisa/Input.h"
-#include "Lisa/KeyCodes.h"
-#include "Lisa/MouseButtonCodes.h"
-#include "Lisa/OrthographicCameraController.h"
+#include "Lisa/Core/Input.h"
+#include "Lisa/Core/KeyCodes.h"
+#include "Lisa/Core/MouseButtonCodes.h"
+#include "Lisa/Renderer/OrthographicCameraController.h"
 
 #include "Lisa/ImGui/ImGuiLayer.h"
 
@@ -28,5 +28,5 @@
 // -------------------------------------------
 
 // ---Entry Point-----------------------------
-#include "Lisa/EntryPoint.h"
+#include "Lisa/Core/EntryPoint.h"
 // -------------------------------------------

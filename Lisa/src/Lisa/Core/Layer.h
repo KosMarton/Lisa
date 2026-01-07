@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Lisa/Core.h"
+#include "Lisa/Core/Core.h"
 #include "Lisa/Core/Timestep.h"
 #include "Lisa/Events/Event.h"
 

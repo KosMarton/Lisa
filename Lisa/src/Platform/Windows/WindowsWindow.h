@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Lisa/Window.h"
+#include "Lisa/Core/Window.h"
 #include "Lisa/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>

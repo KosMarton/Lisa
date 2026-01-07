@@ -1,8 +1,8 @@
 #include "lspch.h"
 #include "OrthographicCameraController.h"
 
-#include "Lisa/Input.h"
-#include "Lisa/KeyCodes.h"
+#include "Lisa/Core/Input.h"
+#include "Lisa/Core/KeyCodes.h"
 
 namespace Lisa {
 

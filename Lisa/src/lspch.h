@@ -13,7 +13,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "Lisa/Log.h"
+#include "Lisa/Core/Log.h"
 
 #ifdef LS_PLATFORM_WINDOWS
 	#include <Windows.h>

@@ -1,7 +1,7 @@
 #include "lspch.h"
 #include "WindowsInput.h"
 
-#include "Lisa/Application.h"
+#include "Lisa/Core/Application.h"
 #include <GLFW/glfw3.h>
 
 namespace Lisa {

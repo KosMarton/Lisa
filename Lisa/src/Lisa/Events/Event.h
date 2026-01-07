@@ -1,7 +1,7 @@
 #pragma once
 
 #include "lspch.h"
-#include "Lisa/Core.h"
+#include "Lisa/Core/Core.h"
 
 namespace Lisa {
 

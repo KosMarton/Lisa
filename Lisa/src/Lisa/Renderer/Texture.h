@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "Lisa/Core.h"
+#include "Lisa/Core/Core.h"
 
 namespace Lisa {
 
