@@ -26,7 +26,3 @@
 
 #include "Lisa/Renderer/OrthographicCamera.h"
 // -------------------------------------------
-
-// ---Entry Point-----------------------------
-#include "Lisa/Core/EntryPoint.h"
-// -------------------------------------------

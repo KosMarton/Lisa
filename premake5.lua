@@ -79,7 +79,6 @@ project "Lisa"
 
 		defines
 		{
-			"LS_PLATFORM_WINDOWS",
 			"LS_BUILD_DLL",
 			"GLFW_INCLUDE_NONE"
 		}
@@ -131,11 +130,6 @@ project "Sandbox"
 	filter "system:windows"
 		systemversion "latest"
 		buildoptions "/utf-8"
-
-		defines
-		{
-			"LS_PLATFORM_WINDOWS",
-		}
 
 	filter "configurations:Debug"
 		defines "LS_DEBUG"
