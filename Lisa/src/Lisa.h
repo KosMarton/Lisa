@@ -17,6 +17,7 @@
 
 // ---Renderer--------------------------------
 #include "Lisa/Renderer/Renderer.h"
+#include "Lisa/Renderer/Renderer2D.h"
 #include "Lisa/Renderer/RenderCommand.h"
 
 #include "Lisa/Renderer/Buffer.h"
