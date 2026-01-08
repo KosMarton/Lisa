@@ -21,5 +21,7 @@ private:
 	Lisa::Ref<Lisa::VertexArray> m_SquareVA;
 	Lisa::Ref<Lisa::Shader> m_FlatColorShader;
 
+	Lisa::Ref<Lisa::Texture2D> m_CheckerboardTexture;
+
 	glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
 };
