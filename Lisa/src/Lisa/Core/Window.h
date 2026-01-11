@@ -22,7 +22,7 @@ namespace Lisa {
 	};
 
 	// Interface representing a desktop system based Window
-	class LISA_API Window
+	class Window
 	{
 	public:
 		using EventCallbackFn = std::function<void(Event&)>;
@@ -41,7 +41,7 @@ namespace Lisa {
 
 		virtual void* GetNativeWindow() const = 0;
 
-		static Window* Create(const WindowProps& props = WindowProps()); // Gets implemented per platform
+		static Scope<Window> Create(const WindowProps& props = WindowProps()); // Gets implemented per platform
 	};
 
 }

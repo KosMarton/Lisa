@@ -1,8 +1,8 @@
 #pragma once
 
-#include "OrthographicCamera.h"
+#include "Lisa/Renderer/OrthographicCamera.h"
 
-#include "Texture.h"
+#include "Lisa/Renderer/Texture.h"
 
 namespace Lisa {
 

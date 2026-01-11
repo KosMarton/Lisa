@@ -1,5 +1,5 @@
 #include "lspch.h"
-#include "OrthographicCameraController.h"
+#include "Lisa/Renderer/OrthographicCameraController.h"
 
 #include "Lisa/Core/Input.h"
 #include "Lisa/Core/KeyCodes.h"
@@ -13,6 +13,8 @@ namespace Lisa {
 
 	void OrthographicCameraController::OnUpdate(Timestep ts)
 	{
+		LS_PROFILE_FUNCTION();
+
 		if (Input::IsKeyPressed(LS_KEY_A))
 		{
 			m_CameraPosition.x -= cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
@@ -57,6 +59,8 @@ namespace Lisa {
 
 	void OrthographicCameraController::OnEvent(Event& e)
 	{
+		LS_PROFILE_FUNCTION();
+
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<MouseScrolledEvent>(LS_BIND_EVENT_FN(OrthographicCameraController::OnMouseScrolled));
 		dispatcher.Dispatch<WindowResizeEvent>(LS_BIND_EVENT_FN(OrthographicCameraController::OnWindowResized));
@@ -64,6 +68,8 @@ namespace Lisa {
 
 	bool OrthographicCameraController::OnMouseScrolled(MouseScrolledEvent& e)
 	{
+		LS_PROFILE_FUNCTION();
+
 		m_ZoomLevel -= e.GetYOffset() * 0.25f;
 		m_ZoomLevel = std::max(m_ZoomLevel, 0.25f);
 		m_Camera.SetProjection(-m_AspectRatio * m_ZoomLevel, m_AspectRatio * m_ZoomLevel, -m_ZoomLevel, m_ZoomLevel);
@@ -72,6 +78,8 @@ namespace Lisa {
 
 	bool OrthographicCameraController::OnWindowResized(WindowResizeEvent& e)
 	{
+		LS_PROFILE_FUNCTION();
+
 		m_AspectRatio = (float)e.GetWidth() / (float)e.GetHeight();
 		m_Camera.SetProjection(-m_AspectRatio * m_ZoomLevel, m_AspectRatio * m_ZoomLevel, -m_ZoomLevel, m_ZoomLevel);
 		return false;

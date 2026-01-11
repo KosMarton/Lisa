@@ -1,6 +1,6 @@
 #pragma once
-
 #include "lspch.h"
+
 #include "Lisa/Core/Core.h"
 
 namespace Lisa {
@@ -35,7 +35,7 @@ namespace Lisa {
 
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
-	class LISA_API Event
+	class Event
 	{
 	public:
 		bool Handled = false;

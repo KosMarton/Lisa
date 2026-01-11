@@ -2,6 +2,8 @@
 
 // For use by Lisa applications
 
+#include "Lisa/Core/Core.h"
+
 #include "Lisa/Core/Application.h"
 #include "Lisa/Core/Layer.h"
 #include "Lisa/Core/Log.h"
@@ -10,7 +12,7 @@
 
 #include "Lisa/Core/Input.h"
 #include "Lisa/Core/KeyCodes.h"
-#include "Lisa/Core/MouseButtonCodes.h"
+#include "Lisa/Core/MouseCodes.h"
 #include "Lisa/Renderer/OrthographicCameraController.h"
 
 #include "Lisa/ImGui/ImGuiLayer.h"

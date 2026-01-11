@@ -1,7 +1,7 @@
 #include "lspch.h"
-#include "Shader.h"
+#include "Lisa/Renderer/Shader.h"
 
-#include "Renderer.h"
+#include "Lisa/Renderer/Renderer.h"
 #include "Platform/OpenGL/OpenGLShader.h"
 
 namespace Lisa {
@@ -11,7 +11,7 @@ namespace Lisa {
 		switch (Renderer::GetAPI())
 		{
 			case RendererAPI::API::None:    LS_CORE_ASSERT(false, "RendererAPI::None is not supported yet!"); return nullptr;
-			case RendererAPI::API::OpenGL:  return std::make_shared<OpenGLShader>(filepath);
+			case RendererAPI::API::OpenGL:  return CreateRef<OpenGLShader>(filepath);
 		}
 
 		LS_CORE_ASSERT(false, "Unknown RendererAPI!");
@@ -23,7 +23,7 @@ namespace Lisa {
 		switch (Renderer::GetAPI())
 		{
 			case RendererAPI::API::None:    LS_CORE_ASSERT(false, "RendererAPI::None is not supported yet!"); return nullptr;
-			case RendererAPI::API::OpenGL:  return std::make_shared<OpenGLShader>(name, vertexSrc, fragmentSrc);
+			case RendererAPI::API::OpenGL:  return CreateRef<OpenGLShader>(name, vertexSrc, fragmentSrc);
 		}
 
 		LS_CORE_ASSERT(false, "Unknown RendererAPI!");

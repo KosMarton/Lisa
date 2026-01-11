@@ -1,27 +1,26 @@
 #include "lspch.h"
-#include "Application.h"
+#include "Lisa/Core/Application.h"
 
 #include "Lisa/Core/Log.h"
 
 #include "Lisa/Renderer/Renderer.h"
 
-#include "Input.h"
+#include "Lisa/Core/Input.h"
 
 #include <glfw/glfw3.h>
 
 namespace Lisa {
 
-#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
-
 	Application* Application::s_Instance = nullptr;
 
 	Application::Application()
 	{
+		LS_PROFILE_FUNCTION();
+
 		LS_CORE_ASSERT(!s_Instance, "Application already exists!");
 		s_Instance = this;
-
-		m_Window = std::unique_ptr<Window>(Window::Create());
-		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+		m_Window = Window::Create();
+		m_Window->SetEventCallback(LS_BIND_EVENT_FN(Application::OnEvent));
 
 		Renderer::Init();
 
@@ -29,25 +28,38 @@ namespace Lisa {
 		PushOverlay(m_ImGuiLayer);
 	}
 
+	Application::~Application()
+	{
+		Renderer::Shutdown();
+	}
+
 	void Application::PushLayer(Layer* layer)
 	{
+		LS_PROFILE_FUNCTION();
+
 		m_LayerStack.PushLayer(layer);
+		layer->OnAttach();
 	}
 
 	void Application::PushOverlay(Layer* layer)
 	{
+		LS_PROFILE_FUNCTION();
+
 		m_LayerStack.PushOverlay(layer);
+		layer->OnAttach();
 	}
 
 	void Application::OnEvent(Event& e)
 	{
-		EventDispatcher dispatcher(e);
-		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
-		dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(OnWindowResize));
+		LS_PROFILE_FUNCTION();
 
-		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
+		EventDispatcher dispatcher(e);
+		dispatcher.Dispatch<WindowCloseEvent>(LS_BIND_EVENT_FN(Application::OnWindowClose));
+		dispatcher.Dispatch<WindowResizeEvent>(LS_BIND_EVENT_FN(Application::OnWindowResize));
+
+		for (auto it = m_LayerStack.rbegin(); it != m_LayerStack.rend(); ++it)
 		{
-			(*--it)->OnEvent(e);
+			(*it)->OnEvent(e);
 			if (e.Handled)
 				break;
 		}
@@ -55,22 +67,34 @@ namespace Lisa {
 
 	void Application::Run()
 	{
+		LS_PROFILE_FUNCTION();
+
 		while (m_Running)
 		{
+			LS_PROFILE_SCOPE("RunLoop");
+
 			float time = (float)glfwGetTime();
 			Timestep timestep = time - m_LastFrameTime;
 			m_LastFrameTime = time;
 
 			if (!m_Minimized)
 			{
-				for (Layer* layer : m_LayerStack)
-					layer->OnUpdate(timestep);
-			}
+				{
+					LS_PROFILE_SCOPE("LayerStack OnUpdate");
 
-			m_ImGuiLayer->Begin();
-			for (Layer* layer : m_LayerStack)
-				layer->OnImGuiRender();
-			m_ImGuiLayer->End();
+					for (Layer* layer : m_LayerStack)
+						layer->OnUpdate(timestep);
+				}
+
+				m_ImGuiLayer->Begin();
+				{
+					LS_PROFILE_SCOPE("LayerStack OnImGuiRender");
+
+					for (Layer* layer : m_LayerStack)
+						layer->OnImGuiRender();
+				}
+				m_ImGuiLayer->End();
+			}
 
 			m_Window->OnUpdate();
 		}
@@ -84,6 +108,8 @@ namespace Lisa {
 
 	bool Application::OnWindowResize(WindowResizeEvent& e)
 	{
+		LS_PROFILE_FUNCTION();
+
 		if (e.GetWidth() == 0 || e.GetHeight() == 0)
 		{
 			m_Minimized = true;

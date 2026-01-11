@@ -2,7 +2,7 @@
 
 #include <glm/glm.hpp>
 
-#include "VertexArray.h"
+#include "Lisa/Renderer/VertexArray.h"
 
 namespace Lisa {
 
@@ -22,6 +22,8 @@ namespace Lisa {
 		virtual void DrawIndexed(const Ref<VertexArray>& vertexArray) = 0;
 
 		inline static API GetAPI() { return s_API; }
+		static Scope<RendererAPI> Create();
+
 	private:
 		static API s_API;
 	};

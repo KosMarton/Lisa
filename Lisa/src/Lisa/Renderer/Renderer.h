@@ -1,9 +1,9 @@
 #pragma once
 
-#include "RenderCommand.h"
+#include "Lisa/Renderer/RenderCommand.h"
 
-#include "OrthographicCamera.h"
-#include "Shader.h"
+#include "Lisa/Renderer/OrthographicCamera.h"
+#include "Lisa/Renderer/Shader.h"
 
 namespace Lisa {
 
@@ -11,6 +11,8 @@ namespace Lisa {
 	{
 	public:
 		static void Init();
+		static void Shutdown();
+
 		static void OnWindowResize(uint32_t width, uint32_t height);
 
 		static void BeginScene(OrthographicCamera& camera);

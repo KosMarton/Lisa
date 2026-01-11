@@ -31,20 +31,6 @@
 	#error "Unknown platform!"
 #endif
 
-#ifdef LS_PLATFORM_WINDOWS
-#if LS_DYNAMIC_LINK
-	#ifdef LS_BUILD_DLL
-		#define LISA_API __declspec(dllexport)
-	#else
-		#define LISA_API __declspec(dllimport)
-	#endif
-#else
-	#define LISA_API
-#endif
-#else
-	#error LISA only supports Windows!
-#endif
-
 #ifdef LS_DEBUG
 	#define LS_ENABLE_ASSERTS
 #endif

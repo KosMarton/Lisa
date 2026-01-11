@@ -81,9 +81,6 @@
     <ClInclude Include="src\Lisa\Core\Log.h">
       <Filter>src\Lisa\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lisa\Core\MouseButtonCodes.h">
-      <Filter>src\Lisa\Core</Filter>
-    </ClInclude>
     <ClInclude Include="src\Lisa\Core\Timestep.h">
       <Filter>src\Lisa\Core</Filter>
     </ClInclude>
@@ -1423,6 +1420,8 @@
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
     <ClInclude Include="src\Lisa\Renderer\Renderer2D.h" />
+    <ClInclude Include="src\Lisa\Debug\Instrumentor.h" />
+    <ClInclude Include="src\Lisa\Core\MouseCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lisa\Core\Application.cpp">
@@ -1501,5 +1500,8 @@
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
     <ClCompile Include="src\Lisa\Renderer\Renderer2D.cpp" />
+    <ClCompile Include="src\Lisa\Renderer\GraphicsContext.cpp" />
+    <ClCompile Include="src\Lisa\Core\Input.cpp" />
+    <ClCompile Include="src\Lisa\Core\Window.cpp" />
   </ItemGroup>
 </Project>
