@@ -32,12 +32,22 @@
 #endif
 
 #ifdef LS_DEBUG
+	#if defined(LS_PLATFORM_WINDOWS)
+		#define LS_DEBUGBREAK() __debugbreak()
+	#elif defined(LS_PLATFORM_LINUX)
+		#include <signal.h>
+		#define LS_DEBUGBREAK() raise(SIGTRAP)
+	#else
+		#error "Platform doesn't support debugbreak yet!"
+	#endif
 	#define LS_ENABLE_ASSERTS
+#else
+	#define LS_DEBUGBREAK()
 #endif
 
 #ifdef LS_ENABLE_ASSERTS
-	#define LS_ASSERT(x, ...) { if(!(x)) { LS_ERROR("Assertion failed: {0}", __VA_ARGS__); __debugbreak(); } }
-	#define LS_CORE_ASSERT(x, ...) { if(!(x)) { LS_CORE_ERROR("Assertion failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define LS_ASSERT(x, ...) { if(!(x)) { LS_ERROR("Assertion failed: {0}", __VA_ARGS__); LS_DEBUGBREAK(); } }
+	#define LS_CORE_ASSERT(x, ...) { if(!(x)) { LS_CORE_ERROR("Assertion failed: {0}", __VA_ARGS__); LS_DEBUGBREAK(); } }
 #else
 	#define LS_ASSERT(x, ...)
 	#define LS_CORE_ASSERT(x, ...)
