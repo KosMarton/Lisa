@@ -1,5 +1,5 @@
 #pragma once
-#include "Lisa/Core/Core.h"
+#include "Lisa/Core/Base.h"
 
 #ifdef LS_PLATFORM_WINDOWS
 

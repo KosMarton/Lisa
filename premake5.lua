@@ -9,6 +9,11 @@ workspace "Lisa"
 		"Dist"
 	}
 
+	flags
+	{
+		"MultiProcessorCompile"
+	}
+
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Include directories relative to root folder (solution directory)
@@ -75,8 +80,7 @@ project "Lisa"
 	}
 
 	filter "system:windows"
-		systemversion "latest"
-		buildoptions "/utf-8"
+		systemversion "latest" buildoptions "/utf-8"
 
 		defines
 		{
@@ -127,8 +131,7 @@ project "Sandbox"
 	}
 
 	filter "system:windows"
-		systemversion "latest"
-		buildoptions "/utf-8"
+		systemversion "latest" buildoptions "/utf-8"
 
 	filter "configurations:Debug"
 		defines "LS_DEBUG"

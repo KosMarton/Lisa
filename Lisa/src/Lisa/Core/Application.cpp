@@ -30,6 +30,8 @@ namespace Lisa {
 
 	Application::~Application()
 	{
+		LS_PROFILE_FUNCTION();
+
 		Renderer::Shutdown();
 	}
 
@@ -59,9 +61,9 @@ namespace Lisa {
 
 		for (auto it = m_LayerStack.rbegin(); it != m_LayerStack.rend(); ++it)
 		{
-			(*it)->OnEvent(e);
 			if (e.Handled)
 				break;
+			(*it)->OnEvent(e);
 		}
 	}
 

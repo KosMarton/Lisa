@@ -93,4 +93,5 @@ namespace Lisa {
 
 		EVENT_CLASS_TYPE(MouseButtonReleased)
 	};
+
 }

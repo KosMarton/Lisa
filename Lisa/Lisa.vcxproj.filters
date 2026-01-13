@@ -10,6 +10,9 @@
     <Filter Include="src\Lisa\Core">
       <UniqueIdentifier>{1D9DEF27-895D-6B5E-5298-B4DBBE17B03A}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Lisa\Debug">
+      <UniqueIdentifier>{DB9BEF25-C769-E32B-B0FD-53529C6ABF90}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Lisa\Events">
       <UniqueIdentifier>{E9696DE7-55F5-DAAB-5E06-5EA0CA1037AC}</UniqueIdentifier>
     </Filter>
@@ -60,7 +63,7 @@
     <ClInclude Include="src\Lisa\Core\Application.h">
       <Filter>src\Lisa\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lisa\Core\Core.h">
+    <ClInclude Include="src\Lisa\Core\Base.h">
       <Filter>src\Lisa\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Lisa\Core\EntryPoint.h">
@@ -81,11 +84,17 @@
     <ClInclude Include="src\Lisa\Core\Log.h">
       <Filter>src\Lisa\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lisa\Core\MouseCodes.h">
+      <Filter>src\Lisa\Core</Filter>
+    </ClInclude>
     <ClInclude Include="src\Lisa\Core\Timestep.h">
       <Filter>src\Lisa\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Lisa\Core\Window.h">
       <Filter>src\Lisa\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lisa\Debug\Instrumentor.h">
+      <Filter>src\Lisa\Debug</Filter>
     </ClInclude>
     <ClInclude Include="src\Lisa\Events\ApplicationEvent.h">
       <Filter>src\Lisa\Events</Filter>
@@ -118,6 +127,9 @@
       <Filter>src\Lisa\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Lisa\Renderer\Renderer.h">
+      <Filter>src\Lisa\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lisa\Renderer\Renderer2D.h">
       <Filter>src\Lisa\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Lisa\Renderer\RendererAPI.h">
@@ -1419,12 +1431,12 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lisa\Renderer\Renderer2D.h" />
-    <ClInclude Include="src\Lisa\Debug\Instrumentor.h" />
-    <ClInclude Include="src\Lisa\Core\MouseCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lisa\Core\Application.cpp">
+      <Filter>src\Lisa\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lisa\Core\Input.cpp">
       <Filter>src\Lisa\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Lisa\Core\Layer.cpp">
@@ -1436,6 +1448,9 @@
     <ClCompile Include="src\Lisa\Core\Log.cpp">
       <Filter>src\Lisa\Core</Filter>
     </ClCompile>
+    <ClCompile Include="src\Lisa\Core\Window.cpp">
+      <Filter>src\Lisa\Core</Filter>
+    </ClCompile>
     <ClCompile Include="src\Lisa\ImGui\ImGuiBuild.cpp">
       <Filter>src\Lisa\ImGui</Filter>
     </ClCompile>
@@ -1443,6 +1458,9 @@
       <Filter>src\Lisa\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Lisa\Renderer\Buffer.cpp">
+      <Filter>src\Lisa\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lisa\Renderer\GraphicsContext.cpp">
       <Filter>src\Lisa\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Lisa\Renderer\OrthographicCamera.cpp">
@@ -1455,6 +1473,9 @@
       <Filter>src\Lisa\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Lisa\Renderer\Renderer.cpp">
+      <Filter>src\Lisa\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lisa\Renderer\Renderer2D.cpp">
       <Filter>src\Lisa\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Lisa\Renderer\RendererAPI.cpp">
@@ -1499,9 +1520,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lisa\Renderer\Renderer2D.cpp" />
-    <ClCompile Include="src\Lisa\Renderer\GraphicsContext.cpp" />
-    <ClCompile Include="src\Lisa\Core\Input.cpp" />
-    <ClCompile Include="src\Lisa\Core\Window.cpp" />
   </ItemGroup>
 </Project>

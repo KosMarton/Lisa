@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Lisa/Core/Core.h"
+#include "Lisa/Core/Base.h"
 
 #include <spdlog/spdlog.h>
 #include <spdlog/fmt/ostr.h>

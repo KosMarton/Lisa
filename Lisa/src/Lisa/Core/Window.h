@@ -2,7 +2,7 @@
 
 #include "lspch.h"
 
-#include "Lisa/Core/Core.h"
+#include "Lisa/Core/Base.h"
 #include "Lisa/Events/Event.h"
 
 namespace Lisa {

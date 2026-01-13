@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Lisa/Core/Core.h"
+#include "Lisa/Core/Base.h"
 #include "Lisa/Core/KeyCodes.h"
 #include "Lisa/Core/MouseCodes.h"
 

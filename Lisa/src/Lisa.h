@@ -2,7 +2,7 @@
 
 // For use by Lisa applications
 
-#include "Lisa/Core/Core.h"
+#include "Lisa/Core/Base.h"
 
 #include "Lisa/Core/Application.h"
 #include "Lisa/Core/Layer.h"

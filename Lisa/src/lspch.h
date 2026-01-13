@@ -14,6 +14,7 @@
 #include <unordered_set>
 
 #include "Lisa/Core/Log.h"
+
 #include "Lisa/Debug/Instrumentor.h"
 
 #ifdef LS_PLATFORM_WINDOWS
