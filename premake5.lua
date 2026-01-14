@@ -1,6 +1,6 @@
 workspace "Lisa"
 	architecture "x86_64"
-	startproject "Sandbox"
+	startproject "Lizzy"
 
 	configurations
 	{
