@@ -24,6 +24,7 @@
 
 #include "Lisa/Renderer/Buffer.h"
 #include "Lisa/Renderer/Shader.h"
+#include "Lisa/Renderer/Framebuffer.h"
 #include "Lisa/Renderer/Texture.h"
 #include "Lisa/Renderer/VertexArray.h"
 

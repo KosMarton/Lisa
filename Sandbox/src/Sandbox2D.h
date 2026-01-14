@@ -20,6 +20,7 @@ private:
 	// Temp
 	Lisa::Ref<Lisa::VertexArray> m_SquareVA;
 	Lisa::Ref<Lisa::Shader> m_FlatColorShader;
+	Lisa::Ref<Lisa::Framebuffer> m_Framebuffer;
 
 	Lisa::Ref<Lisa::Texture2D> m_CheckerboardTexture;
 
