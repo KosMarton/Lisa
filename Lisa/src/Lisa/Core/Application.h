@@ -18,7 +18,7 @@ namespace Lisa {
 	class Application
 	{
 	public:
-		Application();
+		Application(const std::string& name = "Lisa App");
 		virtual ~Application();
 
 		void OnEvent(Event& e);

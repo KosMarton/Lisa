@@ -28,7 +28,6 @@ group "Dependencies"
 	include "Lisa/vendor/GLFW"
 	include "Lisa/vendor/Glad"
 	include "Lisa/vendor/imgui"
-
 group ""
 
 project "Lisa"
@@ -103,6 +102,53 @@ project "Lisa"
 
 project "Sandbox"
 	location "Sandbox"
+	kind "ConsoleApp"
+	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
+
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	files
+	{
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp"
+	}
+
+	includedirs
+	{
+		"Lisa/vendor/spdlog/include",
+		"Lisa/src",
+		"Lisa/vendor",
+		"%{IncludeDir.glm}"
+	}
+
+	links
+	{
+		"Lisa"
+	}
+
+	filter "system:windows"
+		systemversion "latest" buildoptions "/utf-8"
+
+	filter "configurations:Debug"
+		defines "LS_DEBUG"
+		runtime "Debug"
+		symbols "on"
+
+	filter "configurations:Release"
+		defines "LS_RELEASE"
+		runtime "Release"
+		optimize "on"
+
+	filter "configurations:Dist"
+		defines "LS_DIST"
+		runtime "Release"
+		optimize "on"
+
+project "Lizzy"
+	location "Lizzy"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"
