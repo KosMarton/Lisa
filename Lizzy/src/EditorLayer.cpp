@@ -32,6 +32,15 @@ namespace Lisa {
 	{
 		LS_PROFILE_FUNCTION();
 
+		// Resize
+		if (Lisa::FramebufferSpecification spec = m_Framebuffer->GetSpecification();
+			m_ViewportSize.x > 0.0f && m_ViewportSize.y > 0.0f && // zero sized framebuffer is invalid
+			(spec.Width != m_ViewportSize.x || spec.Height != m_ViewportSize.y))
+		{
+			m_Framebuffer->Resize((uint32_t)m_ViewportSize.x, (uint32_t)m_ViewportSize.y);
+			m_CameraController.OnResize(m_ViewportSize.x, m_ViewportSize.y);
+		}
+
 		// Update
 		if (m_ViewportFocused)
 			m_CameraController.OnUpdate(ts);
@@ -157,13 +166,8 @@ namespace Lisa {
 		Application::Get().GetImGuiLayer()->BlockEvents(!m_ViewportFocused || !m_ViewportHovered);
 
 		ImVec2 viewportPanelsize = ImGui::GetContentRegionAvail();
-		if (m_ViewportSize != *((glm::vec2*)&viewportPanelsize))
-		{
-			m_Framebuffer->Resize((uint32_t)viewportPanelsize.x, (uint32_t)viewportPanelsize.y);
-			m_ViewportSize = { viewportPanelsize.x, viewportPanelsize.y };
+		m_ViewportSize = { viewportPanelsize.x, viewportPanelsize.y };
 
-			m_CameraController.OnResize(viewportPanelsize.x, viewportPanelsize.y);
-		}
 		uint32_t textureID = m_Framebuffer->GetColorAttachmentRendererID();
 		ImGui::Image((void*)textureID, ImVec2{ m_ViewportSize.x, m_ViewportSize.y }, ImVec2{ 0, 1 }, ImVec2{ 1, 0 });
 		ImGui::End();
