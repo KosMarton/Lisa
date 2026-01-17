@@ -23,6 +23,7 @@ IncludeDir["Glad"] = "Lisa/vendor/Glad/include"
 IncludeDir["ImGui"] = "Lisa/vendor/imgui"
 IncludeDir["glm"] = "Lisa/vendor/glm"
 IncludeDir["stb_image"] = "Lisa/vendor/stb_image"
+IncludeDir["entt"] = "Lisa/vendor/entt/include"
 
 group "Dependencies"
 	include "Lisa/vendor/GLFW"
@@ -67,7 +68,8 @@ project "Lisa"
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.glm}",
-		"%{IncludeDir.stb_image}"
+		"%{IncludeDir.stb_image}",
+		"%{IncludeDir.entt}"
 	}
 
 	links
@@ -121,7 +123,8 @@ project "Sandbox"
 		"Lisa/vendor/spdlog/include",
 		"Lisa/src",
 		"Lisa/vendor",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}"
 	}
 
 	links
@@ -168,7 +171,8 @@ project "Lizzy"
 		"Lisa/vendor/spdlog/include",
 		"Lisa/src",
 		"Lisa/vendor",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}"
 	}
 
 	links

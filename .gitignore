@@ -11,3 +11,5 @@ bin-int/
 **.vcxproj
 **.vcxproj.filters
 **.vcxproj.user
+/Lizzy/LisaProfile-Runtime.json
+/Sandbox/LisaProfile-Runtime.json

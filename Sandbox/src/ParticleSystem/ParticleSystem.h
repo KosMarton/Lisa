@@ -71,6 +71,7 @@ private:
  	
  	m_ParticleSystem.OnUpdate(ts);
  	m_ParticleSystem.OnRender(m_CameraController.GetCamera());
+   
 
 #endif
 ////////////////////////!!!!!!!!!!!!!!//////////////////////////////////
