@@ -1437,6 +1437,7 @@
     <ClInclude Include="src\Lisa\Scene\Scene.h" />
     <ClInclude Include="vendor\entt\include\entt.hpp" />
     <ClInclude Include="src\Lisa\Scene\Components.h" />
+    <ClInclude Include="src\Lisa\Scene\Entity.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lisa\Core\Application.cpp">
@@ -1530,5 +1531,6 @@
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
     <ClCompile Include="src\Lisa\Scene\Scene.cpp" />
+    <ClCompile Include="src\Lisa\Scene\Entity.cpp" />
   </ItemGroup>
 </Project>

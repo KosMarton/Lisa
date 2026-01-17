@@ -18,6 +18,7 @@
 #include "Lisa/ImGui/ImGuiLayer.h"
 
 #include "Lisa/Scene/Scene.h"
+#include "Lisa/Scene/Entity.h"
 #include "Lisa/Scene/Components.h"
 
 // ---Renderer--------------------------------
