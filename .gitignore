@@ -1,5 +1,6 @@
-# Directories
+# Binaries
 **/bin/
+!vendor/bin/premake/
 bin-int/
 
 # Lisa files
@@ -11,5 +12,3 @@ bin-int/
 **.vcxproj
 **.vcxproj.filters
 **.vcxproj.user
-/Lizzy/LisaProfile-Runtime.json
-/Sandbox/LisaProfile-Runtime.json
