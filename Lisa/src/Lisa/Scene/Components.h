@@ -3,6 +3,7 @@
 #include <glm/glm.hpp>
 
 #include "Lisa/Scene/SceneCamera.h"
+#include "Lisa/Scene/ScriptableEntity.h"
 
 namespace Lisa {
 
@@ -47,6 +48,21 @@ namespace Lisa {
 		
 		CameraComponent() = default;
 		CameraComponent(const CameraComponent&) = default;
+	};
+
+	struct NativeScriptComponent
+	{
+		ScriptableEntity* Instance = nullptr;
+
+		ScriptableEntity*(*InstantiateScript)();
+		void (*DestroyScript)(NativeScriptComponent*);
+
+		template<typename T>
+		void Bind()
+		{
+			InstantiateScript = []() { return static_cast<ScriptableEntity*>(new T()); };
+			DestroyScript = [](NativeScriptComponent* nsc) { delete nsc->Instance; nsc->Instance = nullptr; };
+		}
 	};
 
 }

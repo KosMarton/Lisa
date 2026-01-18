@@ -1440,6 +1440,7 @@
     <ClInclude Include="src\Lisa\Scene\Entity.h" />
     <ClInclude Include="src\Lisa\Renderer\Camera.h" />
     <ClInclude Include="src\Lisa\Scene\SceneCamera.h" />
+    <ClInclude Include="src\Lisa\Scene\ScriptableEntity.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lisa\Core\Application.cpp">

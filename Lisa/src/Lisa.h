@@ -19,6 +19,7 @@
 
 #include "Lisa/Scene/Scene.h"
 #include "Lisa/Scene/Entity.h"
+#include "Lisa/Scene/ScriptableEntity.h"
 #include "Lisa/Scene/Components.h"
 
 // ---Renderer--------------------------------
