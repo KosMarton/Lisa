@@ -151,6 +151,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Lisa.h" />
+    <ClInclude Include="src\Lisa\Renderer\Camera.h" />
     <ClInclude Include="src\Lisa\Core\Application.h" />
     <ClInclude Include="src\Lisa\Core\Base.h" />
     <ClInclude Include="src\Lisa\Core\EntryPoint.h" />

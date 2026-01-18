@@ -2,6 +2,8 @@
 
 #include <glm/glm.hpp>
 
+#include "Lisa/Renderer/Camera.h"
+
 namespace Lisa {
 
 	struct TagComponent
@@ -35,6 +37,17 @@ namespace Lisa {
 		SpriteRendererComponent(const SpriteRendererComponent&) = default;
 		SpriteRendererComponent(const glm::vec4& color)
 			: Color(color) {}
+	};
+
+	struct CameraComponent
+	{
+		Lisa::Camera Camera;
+		bool Primary = true; // TODO: think about moving to Scene
+		
+		CameraComponent() = default;
+		CameraComponent(const CameraComponent&) = default;
+		CameraComponent(const glm::mat4& projection)
+			: Camera(projection) {}
 	};
 
 }
