@@ -1439,6 +1439,7 @@
     <ClInclude Include="src\Lisa\Scene\Components.h" />
     <ClInclude Include="src\Lisa\Scene\Entity.h" />
     <ClInclude Include="src\Lisa\Renderer\Camera.h" />
+    <ClInclude Include="src\Lisa\Scene\SceneCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lisa\Core\Application.cpp">
@@ -1533,5 +1534,6 @@
     </ClCompile>
     <ClCompile Include="src\Lisa\Scene\Scene.cpp" />
     <ClCompile Include="src\Lisa\Scene\Entity.cpp" />
+    <ClCompile Include="src\Lisa\Scene\SceneCamera.cpp" />
   </ItemGroup>
 </Project>
