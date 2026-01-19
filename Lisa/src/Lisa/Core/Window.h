@@ -1,6 +1,6 @@
 #pragma once
 
-#include "lspch.h"
+#include <sstream>
 
 #include "Lisa/Core/Base.h"
 #include "Lisa/Events/Event.h"

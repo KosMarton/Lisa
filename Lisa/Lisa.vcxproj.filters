@@ -22,6 +22,9 @@
     <Filter Include="src\Lisa\Renderer">
       <UniqueIdentifier>{EB966A6F-57AD-6805-A024-F4260C7A398D}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Lisa\Scene">
+      <UniqueIdentifier>{82FEFD26-6ECC-F12C-5760-625343CDCD91}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Platform">
       <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
     </Filter>
@@ -87,6 +90,9 @@
     <ClInclude Include="src\Lisa\Core\MouseCodes.h">
       <Filter>src\Lisa\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lisa\Core\PlatformDetection.h">
+      <Filter>src\Lisa\Core</Filter>
+    </ClInclude>
     <ClInclude Include="src\Lisa\Core\Timestep.h">
       <Filter>src\Lisa\Core</Filter>
     </ClInclude>
@@ -112,6 +118,9 @@
       <Filter>src\Lisa\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="src\Lisa\Renderer\Buffer.h">
+      <Filter>src\Lisa\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lisa\Renderer\Camera.h">
       <Filter>src\Lisa\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Lisa\Renderer\Framebuffer.h">
@@ -146,6 +155,21 @@
     </ClInclude>
     <ClInclude Include="src\Lisa\Renderer\VertexArray.h">
       <Filter>src\Lisa\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lisa\Scene\Components.h">
+      <Filter>src\Lisa\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lisa\Scene\Entity.h">
+      <Filter>src\Lisa\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lisa\Scene\Scene.h">
+      <Filter>src\Lisa\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lisa\Scene\SceneCamera.h">
+      <Filter>src\Lisa\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lisa\Scene\ScriptableEntity.h">
+      <Filter>src\Lisa\Scene</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
       <Filter>src\Platform\OpenGL</Filter>
@@ -1434,13 +1458,6 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lisa\Scene\Scene.h" />
-    <ClInclude Include="vendor\entt\include\entt.hpp" />
-    <ClInclude Include="src\Lisa\Scene\Components.h" />
-    <ClInclude Include="src\Lisa\Scene\Entity.h" />
-    <ClInclude Include="src\Lisa\Renderer\Camera.h" />
-    <ClInclude Include="src\Lisa\Scene\SceneCamera.h" />
-    <ClInclude Include="src\Lisa\Scene\ScriptableEntity.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lisa\Core\Application.cpp">
@@ -1500,6 +1517,15 @@
     <ClCompile Include="src\Lisa\Renderer\VertexArray.cpp">
       <Filter>src\Lisa\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\Lisa\Scene\Entity.cpp">
+      <Filter>src\Lisa\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lisa\Scene\Scene.cpp">
+      <Filter>src\Lisa\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lisa\Scene\SceneCamera.cpp">
+      <Filter>src\Lisa\Scene</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
@@ -1533,8 +1559,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lisa\Scene\Scene.cpp" />
-    <ClCompile Include="src\Lisa\Scene\Entity.cpp" />
-    <ClCompile Include="src\Lisa\Scene\SceneCamera.cpp" />
   </ItemGroup>
 </Project>

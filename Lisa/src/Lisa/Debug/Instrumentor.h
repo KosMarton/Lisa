@@ -6,6 +6,10 @@
 #include <iomanip>
 #include <string>
 #include <thread>
+#include <mutex>
+#include <sstream>
+
+#include "Lisa/Core/Log.h"
 
 namespace Lisa {
 

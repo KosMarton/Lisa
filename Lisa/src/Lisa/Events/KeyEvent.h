@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Lisa/Events/Event.h"
-#include "Lisa/Core/Input.h"
+#include "Lisa/Core/KeyCodes.h"
 
 namespace Lisa {
 
@@ -12,7 +12,7 @@ namespace Lisa {
 
 		EVENT_CLASS_CATEGORY(EventCategoryKeyBoard | EventCategoryInput)
 	protected:
-		KeyEvent(KeyCode keycode)
+		KeyEvent(const KeyCode keycode)
 			: m_KeyCode(keycode) {}
 
 		KeyCode m_KeyCode;
@@ -21,10 +21,10 @@ namespace Lisa {
 	class KeyPressedEvent : public KeyEvent
 	{
 	public:
-		KeyPressedEvent(KeyCode keycode, int repeatCount)
+		KeyPressedEvent(const KeyCode keycode, const uint16_t repeatCount)
 			: KeyEvent(keycode), m_RepeatCount(repeatCount) {}
 
-		int GetRepeatCount() const { return m_RepeatCount; }
+		uint16_t GetRepeatCount() const { return m_RepeatCount; }
 
 		std::string ToString() const override
 		{
@@ -35,13 +35,13 @@ namespace Lisa {
 
 		EVENT_CLASS_TYPE(KeyPressed)
 	private:
-		int m_RepeatCount;
+		uint16_t m_RepeatCount;
 	};
 
 	class KeyReleasedEvent : public KeyEvent
 	{
 	public:
-		KeyReleasedEvent(KeyCode keycode)
+		KeyReleasedEvent(const KeyCode keycode)
 			: KeyEvent(keycode) {}
 
 		std::string ToString() const override
@@ -57,7 +57,7 @@ namespace Lisa {
 	class KeyTypedEvent : public KeyEvent
 	{
 	public:
-		KeyTypedEvent(KeyCode keycode)
+		KeyTypedEvent(const KeyCode keycode)
 			: KeyEvent(keycode) {}
 
 		std::string ToString() const override

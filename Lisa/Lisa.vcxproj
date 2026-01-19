@@ -151,7 +151,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Lisa.h" />
-    <ClInclude Include="src\Lisa\Renderer\Camera.h" />
     <ClInclude Include="src\Lisa\Core\Application.h" />
     <ClInclude Include="src\Lisa\Core\Base.h" />
     <ClInclude Include="src\Lisa\Core\EntryPoint.h" />
@@ -161,6 +160,7 @@
     <ClInclude Include="src\Lisa\Core\LayerStack.h" />
     <ClInclude Include="src\Lisa\Core\Log.h" />
     <ClInclude Include="src\Lisa\Core\MouseCodes.h" />
+    <ClInclude Include="src\Lisa\Core\PlatformDetection.h" />
     <ClInclude Include="src\Lisa\Core\Timestep.h" />
     <ClInclude Include="src\Lisa\Core\Window.h" />
     <ClInclude Include="src\Lisa\Debug\Instrumentor.h" />
@@ -170,6 +170,7 @@
     <ClInclude Include="src\Lisa\Events\MouseEvent.h" />
     <ClInclude Include="src\Lisa\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Lisa\Renderer\Buffer.h" />
+    <ClInclude Include="src\Lisa\Renderer\Camera.h" />
     <ClInclude Include="src\Lisa\Renderer\Framebuffer.h" />
     <ClInclude Include="src\Lisa\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Lisa\Renderer\OrthographicCamera.h" />
@@ -195,7 +196,6 @@
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\lspch.h" />
-    <ClInclude Include="vendor\entt\include\entt.hpp" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_fixes.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_noise.hpp" />

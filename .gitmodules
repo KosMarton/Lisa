@@ -1,12 +1,12 @@
 [submodule "Lisa/vendor/spdlog"]
 	path = Lisa/vendor/spdlog
-	url = https://github.com/gabime/spdlog
+	url = ../../gabime/spdlog.git
 [submodule "Lisa/vendor/GLFW"]
 	path = Lisa/vendor/GLFW
-	url = https://github.com/TheCherno/GLFW
+	url = ../../TheCherno/GLFW.git
 [submodule "Lisa/vendor/imgui"]
 	path = Lisa/vendor/imgui
-	url = https://github.com/TheCherno/imgui
+	url = ../../TheCherno/imgui.git
 [submodule "Lisa/vendor/glm"]
 	path = Lisa/vendor/glm
-	url = https://github.com/g-truc/glm
+	url = ../../g-truc/glm.git

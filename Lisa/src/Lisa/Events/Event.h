@@ -1,6 +1,7 @@
 #pragma once
-#include "lspch.h"
+#include <functional>
 
+#include "Lisa/Debug/Instrumentor.h"
 #include "Lisa/Core/Base.h"
 
 namespace Lisa {

@@ -1,5 +1,14 @@
 #pragma once
 
+#include "Lisa/Core/PlatformDetection.h"
+
+#ifdef LS_PLATFORM_WINDOWS
+	#ifndef NOMINMAX
+
+		#define NOMINMAX
+	#endif
+#endif
+
 #include <iostream>
 #include <memory>
 #include <utility>
@@ -12,6 +21,8 @@
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
+
+#include "Lisa/Core/Base.h"
 
 #include "Lisa/Core/Log.h"
 

@@ -1,3 +1,5 @@
+include "./vendor/premake/premake_customization/solution_items.lua"
+
 workspace "Lisa"
 	architecture "x86_64"
 	startproject "Lizzy"
@@ -9,6 +11,11 @@ workspace "Lisa"
 		"Dist"
 	}
 
+	solution_items
+	{
+		".editorconfig"
+	}
+
 	flags
 	{
 		"MultiProcessorCompile"
@@ -18,182 +25,20 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
-IncludeDir["GLFW"] = "Lisa/vendor/GLFW/include"
-IncludeDir["Glad"] = "Lisa/vendor/Glad/include"
-IncludeDir["ImGui"] = "Lisa/vendor/imgui"
-IncludeDir["glm"] = "Lisa/vendor/glm"
-IncludeDir["stb_image"] = "Lisa/vendor/stb_image"
-IncludeDir["entt"] = "Lisa/vendor/entt/include"
+IncludeDir["GLFW"] = "%{wks.location}/Lisa/vendor/GLFW/include"
+IncludeDir["Glad"] = "%{wks.location}/Lisa/vendor/Glad/include"
+IncludeDir["ImGui"] = "%{wks.location}/Lisa/vendor/imgui"
+IncludeDir["glm"] = "%{wks.location}/Lisa/vendor/glm"
+IncludeDir["stb_image"] = "%{wks.location}/Lisa/vendor/stb_image"
+IncludeDir["entt"] = "%{wks.location}/Lisa/vendor/entt/include"
 
 group "Dependencies"
+	include "vendor/premake"
 	include "Lisa/vendor/GLFW"
 	include "Lisa/vendor/Glad"
 	include "Lisa/vendor/imgui"
 group ""
 
-project "Lisa"
-	location "Lisa"
-	kind "StaticLib"
-	language "C++"
-	cppdialect "C++17"
-	staticruntime "on"
-
-	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
-
-	pchheader "lspch.h"
-	pchsource "Lisa/src/lspch.cpp"
-
-	files
-	{
-		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp",
-		"%{prj.name}/vendor/stb_image/**.h",
-		"%{prj.name}/vendor/stb_image/**.cpp",
-		"%{prj.name}/vendor/glm/glm/**.hpp",
-		"%{prj.name}/vendor/glm/glm/**.inl"
-	}
-
-	defines
-	{
-		"_CRT_SECURE_NO_WARNINGS",
-		"GLFW_INCLUDE_NONE"
-	}
-
-	includedirs
-	{
-		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}",
-		"%{IncludeDir.stb_image}",
-		"%{IncludeDir.entt}"
-	}
-
-	links
-	{
-		"GLFW",
-		"Glad",
-		"ImGui",
-		"opengl32.lib"
-	}
-
-	filter "system:windows"
-		systemversion "latest" buildoptions "/utf-8"
-
-		defines
-		{
-		}
-
-	filter "configurations:Debug"
-		defines "LS_DEBUG"
-		runtime "Debug"
-		symbols "on"
-
-	filter "configurations:Release"
-		defines "LS_RELEASE"
-		runtime "Release"
-		optimize "on"
-
-	filter "configurations:Dist"
-		defines "LS_DIST"
-		runtime "Release"
-		optimize "on"
-
-project "Sandbox"
-	location "Sandbox"
-	kind "ConsoleApp"
-	language "C++"
-	cppdialect "C++17"
-	staticruntime "on"
-
-	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
-
-	files
-	{
-		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
-	}
-
-	includedirs
-	{
-		"Lisa/vendor/spdlog/include",
-		"Lisa/src",
-		"Lisa/vendor",
-		"%{IncludeDir.glm}",
-		"%{IncludeDir.entt}"
-	}
-
-	links
-	{
-		"Lisa"
-	}
-
-	filter "system:windows"
-		systemversion "latest" buildoptions "/utf-8"
-
-	filter "configurations:Debug"
-		defines "LS_DEBUG"
-		runtime "Debug"
-		symbols "on"
-
-	filter "configurations:Release"
-		defines "LS_RELEASE"
-		runtime "Release"
-		optimize "on"
-
-	filter "configurations:Dist"
-		defines "LS_DIST"
-		runtime "Release"
-		optimize "on"
-
-project "Lizzy"
-	location "Lizzy"
-	kind "ConsoleApp"
-	language "C++"
-	cppdialect "C++17"
-	staticruntime "on"
-
-	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
-
-	files
-	{
-		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
-	}
-
-	includedirs
-	{
-		"Lisa/vendor/spdlog/include",
-		"Lisa/src",
-		"Lisa/vendor",
-		"%{IncludeDir.glm}",
-		"%{IncludeDir.entt}"
-	}
-
-	links
-	{
-		"Lisa"
-	}
-
-	filter "system:windows"
-		systemversion "latest" buildoptions "/utf-8"
-
-	filter "configurations:Debug"
-		defines "LS_DEBUG"
-		runtime "Debug"
-		symbols "on"
-
-	filter "configurations:Release"
-		defines "LS_RELEASE"
-		runtime "Release"
-		optimize "on"
-
-	filter "configurations:Dist"
-		defines "LS_DIST"
-		runtime "Release"
-		optimize "on"
+include "Lisa"
+include "Sandbox"
+include "Lizzy"
