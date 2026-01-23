@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Lisa/Core/Base.h"
-#include "Lisa/Core/Log.h"
 #include "Lisa/Scene/Scene.h"
 #include "Lisa/Scene/Entity.h"
 

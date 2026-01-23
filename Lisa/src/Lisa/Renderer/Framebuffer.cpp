@@ -1,5 +1,5 @@
 #include "lspch.h"
-#include "Framebuffer.h"
+#include "Lisa/Renderer/Framebuffer.h"
 
 #include "Lisa/Renderer/Renderer.h"
 

@@ -7,6 +7,7 @@
 #include "Lisa/Core/Application.h"
 #include "Lisa/Core/Layer.h"
 #include "Lisa/Core/Log.h"
+#include "Lisa/Core/Assert.h"
 
 #include "Lisa/Core/Timestep.h"
 

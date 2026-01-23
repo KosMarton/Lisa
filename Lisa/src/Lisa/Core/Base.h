@@ -18,13 +18,8 @@
 	#define LS_DEBUGBREAK()
 #endif
 
-#ifdef LS_ENABLE_ASSERTS
-	#define LS_ASSERT(x, ...) { if(!(x)) { LS_ERROR("Assertion failed: {0}", __VA_ARGS__); LS_DEBUGBREAK(); } }
-	#define LS_CORE_ASSERT(x, ...) { if(!(x)) { LS_CORE_ERROR("Assertion failed: {0}", __VA_ARGS__); LS_DEBUGBREAK(); } }
-#else
-	#define LS_ASSERT(x, ...)
-	#define LS_CORE_ASSERT(x, ...)
-#endif
+#define LS_EXPAND_MACRO(x) x
+#define LS_STRINGIFY_MACRO(x) #x
  
 #define BIT(x) (1 << x)
 
@@ -49,3 +44,6 @@ namespace Lisa {
 	}
 	
 }
+
+#include "Lisa/Core/Log.h"
+#include "Lisa/Core/Assert.h"

@@ -70,7 +70,7 @@ namespace Lisa {
 	public:
 		BufferLayout() {}
 
-		BufferLayout(const std::initializer_list<BufferElement>& elemets)
+		BufferLayout(std::initializer_list<BufferElement> elemets)
 			: m_Elements(elemets)
 		{
 			CalculateOffsetsAndStride();
