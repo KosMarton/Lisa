@@ -6,7 +6,7 @@
 
 namespace Lisa::Math {
 
-	bool DecomposeTransform(const glm::mat4& transform, glm::vec3& outTranslation, glm::vec3& outRotation, glm::vec3& outScale)
+	bool DecomposeTransform(const glm::mat4& transform, glm::vec3& translation, glm::vec3& rotation, glm::vec3& scale)
 	{
 		// From glm::decompose in matrix_decompose.inl
 
@@ -31,7 +31,7 @@ namespace Lisa::Math {
 		}
 
 		// Next take care of translation (easy).
-		outTranslation = vec3(LocalMatrix[3]);
+		translation = vec3(LocalMatrix[3]);
 		LocalMatrix[3] = vec4(0, 0, 0, LocalMatrix[3].w);
 
 		vec3 Row[3], Pdum3;
@@ -42,11 +42,11 @@ namespace Lisa::Math {
 				Row[i][j] = LocalMatrix[i][j];
 
 		// Compute X scale factor and normalize first row.
-		outScale.x = length(Row[0]);
+		scale.x = length(Row[0]);
 		Row[0] = detail::scale(Row[0], static_cast<T>(1));
-		outScale.y = length(Row[1]);
+		scale.y = length(Row[1]);
 		Row[1] = detail::scale(Row[1], static_cast<T>(1));
-		outScale.z = length(Row[2]);
+		scale.z = length(Row[2]);
 		Row[2] = detail::scale(Row[2], static_cast<T>(1));
 
 		// At this point, the matrix (in rows[]) is orthonormal.
@@ -64,14 +64,14 @@ namespace Lisa::Math {
 		}
 #endif
 
-		outRotation.y = asin(-Row[0][2]);
-		if (cos(outRotation.y) != 0) {
-			outRotation.x = atan2(Row[1][2], Row[2][2]);
-			outRotation.z = atan2(Row[0][1], Row[0][0]);
+		rotation.y = asin(-Row[0][2]);
+		if (cos(rotation.y) != 0) {
+			rotation.x = atan2(Row[1][2], Row[2][2]);
+			rotation.z = atan2(Row[0][1], Row[0][0]);
 		}
 		else {
-			outRotation.x = atan2(-Row[2][0], Row[1][1]);
-			outRotation.z = 0;
+			rotation.x = atan2(-Row[2][0], Row[1][1]);
+			rotation.z = 0;
 		}
 
 
