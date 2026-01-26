@@ -1477,6 +1477,7 @@
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
     <ClInclude Include="src\Lisa\Math\Math.h" />
+    <ClInclude Include="src\Lisa\Renderer\EditorCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lisa\Core\Application.cpp">
@@ -1588,5 +1589,6 @@
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
     <ClCompile Include="src\Lisa\Math\Math.cpp" />
+    <ClCompile Include="src\Lisa\Renderer\EditorCamera.cpp" />
   </ItemGroup>
 </Project>

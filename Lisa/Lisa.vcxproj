@@ -173,6 +173,7 @@
     <ClInclude Include="src\Lisa\Math\Math.h" />
     <ClInclude Include="src\Lisa\Renderer\Buffer.h" />
     <ClInclude Include="src\Lisa\Renderer\Camera.h" />
+    <ClInclude Include="src\Lisa\Renderer\EditorCamera.h" />
     <ClInclude Include="src\Lisa\Renderer\Framebuffer.h" />
     <ClInclude Include="src\Lisa\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Lisa\Renderer\OrthographicCamera.h" />
@@ -632,6 +633,7 @@
     <ClCompile Include="src\Lisa\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Lisa\Math\Math.cpp" />
     <ClCompile Include="src\Lisa\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\Lisa\Renderer\EditorCamera.cpp" />
     <ClCompile Include="src\Lisa\Renderer\Framebuffer.cpp" />
     <ClCompile Include="src\Lisa\Renderer\GraphicsContext.cpp" />
     <ClCompile Include="src\Lisa\Renderer\OrthographicCamera.cpp" />

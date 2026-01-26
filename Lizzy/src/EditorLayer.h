@@ -3,6 +3,8 @@
 #include "Lisa.h"
 #include "Panels/SceneHierarchyPanel.h"
 
+#include "Lisa/Renderer/EditorCamera.h"
+
 namespace Lisa {
 
 	class EditorLayer : public Layer
@@ -37,6 +39,8 @@ namespace Lisa {
 		Entity m_SecondCamera;
 
 		bool m_PrimaryCamera = true;
+
+		EditorCamera m_EditorCamera;
 
 		Ref<Texture2D> m_CheckerboardTexture;
 
