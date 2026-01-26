@@ -13,3 +13,6 @@
 [submodule "Lisa/vendor/yaml-cpp"]
 	path = Lisa/vendor/yaml-cpp
 	url = https://github.com/thecherno/yaml-cpp
+[submodule "Lisa/vendor/ImGuizmo"]
+	path = Lisa/vendor/ImGuizmo
+	url = https://github.com/thecherno/imguizmo

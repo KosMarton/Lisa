@@ -19,7 +19,8 @@ project "Lizzy"
 		"%{wks.location}/Lisa/src",
 		"%{wks.location}/Lisa/vendor",
 		"%{IncludeDir.glm}",
-		"%{IncludeDir.entt}"
+		"%{IncludeDir.entt}",
+		"%{IncludeDir.ImGuizmo}"
 	}
 
 	links
