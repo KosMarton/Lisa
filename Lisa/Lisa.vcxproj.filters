@@ -19,6 +19,9 @@
     <Filter Include="src\Lisa\ImGui">
       <UniqueIdentifier>{8F064E26-7BD4-412C-6468-B25250D51D91}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Lisa\Math">
+      <UniqueIdentifier>{9EDDF427-0A9E-705E-D3D8-B9DB3F58B53A}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Lisa\Renderer">
       <UniqueIdentifier>{EB966A6F-57AD-6805-A024-F4260C7A398D}</UniqueIdentifier>
     </Filter>
@@ -126,10 +129,16 @@
     <ClInclude Include="src\Lisa\ImGui\ImGuiLayer.h">
       <Filter>src\Lisa\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lisa\Math\Math.h">
+      <Filter>src\Lisa\Math</Filter>
+    </ClInclude>
     <ClInclude Include="src\Lisa\Renderer\Buffer.h">
       <Filter>src\Lisa\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Lisa\Renderer\Camera.h">
+      <Filter>src\Lisa\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lisa\Renderer\EditorCamera.h">
       <Filter>src\Lisa\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Lisa\Renderer\Framebuffer.h">
@@ -1476,8 +1485,6 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lisa\Math\Math.h" />
-    <ClInclude Include="src\Lisa\Renderer\EditorCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lisa\Core\Application.cpp">
@@ -1501,7 +1508,13 @@
     <ClCompile Include="src\Lisa\ImGui\ImGuiLayer.cpp">
       <Filter>src\Lisa\ImGui</Filter>
     </ClCompile>
+    <ClCompile Include="src\Lisa\Math\Math.cpp">
+      <Filter>src\Lisa\Math</Filter>
+    </ClCompile>
     <ClCompile Include="src\Lisa\Renderer\Buffer.cpp">
+      <Filter>src\Lisa\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lisa\Renderer\EditorCamera.cpp">
       <Filter>src\Lisa\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Lisa\Renderer\Framebuffer.cpp">
@@ -1588,7 +1601,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lisa\Math\Math.cpp" />
-    <ClCompile Include="src\Lisa\Renderer\EditorCamera.cpp" />
   </ItemGroup>
 </Project>
