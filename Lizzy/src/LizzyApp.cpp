@@ -8,8 +8,8 @@ namespace Lisa {
 	class Lizzy : public Application
 	{
 	public:
-		Lizzy()
-			: Application("Lizzy")
+		Lizzy(ApplicationCommandLineArgs args)
+			: Application("Lizzy", args)
 		{
 			PushLayer(new EditorLayer());
 		}
@@ -19,9 +19,9 @@ namespace Lisa {
 		}
 	};
 
-	Application* CreateApplication()
+	Application* CreateApplication(ApplicationCommandLineArgs args)
 	{
-		return new Lizzy();
+		return new Lizzy(args);
 	}
 
 }

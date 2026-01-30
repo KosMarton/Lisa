@@ -13,7 +13,8 @@ namespace Lisa {
 
 	Application* Application::s_Instance = nullptr;
 
-	Application::Application(const std::string& name)
+	Application::Application(const std::string& name, ApplicationCommandLineArgs args)
+		: m_CommandLineArgs(args)
 	{
 		LS_PROFILE_FUNCTION();
 

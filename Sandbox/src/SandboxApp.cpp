@@ -7,7 +7,8 @@
 class Sandbox : public Lisa::Application
 {
 public:
-	Sandbox()
+	Sandbox(Lisa::ApplicationCommandLineArgs args)
+		: Application("Sandbox", args)
 	{
 		// PushLayer(new ExampleLayer());
 		PushLayer(new Sandbox2D());
@@ -18,7 +19,7 @@ public:
 	}
 };
 
-Lisa::Application* Lisa::CreateApplication()
+Lisa::Application* Lisa::CreateApplication(Lisa::ApplicationCommandLineArgs args)
 {
-	return new Sandbox();
+	return new Sandbox(args);
 }

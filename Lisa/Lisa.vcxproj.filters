@@ -105,6 +105,9 @@
     <ClInclude Include="src\Lisa\Core\PlatformDetection.h">
       <Filter>src\Lisa\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lisa\Core\Timer.h">
+      <Filter>src\Lisa\Core</Filter>
+    </ClInclude>
     <ClInclude Include="src\Lisa\Core\Timestep.h">
       <Filter>src\Lisa\Core</Filter>
     </ClInclude>
@@ -171,6 +174,9 @@
     <ClInclude Include="src\Lisa\Renderer\Texture.h">
       <Filter>src\Lisa\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lisa\Renderer\UniformBuffer.h">
+      <Filter>src\Lisa\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Lisa\Renderer\VertexArray.h">
       <Filter>src\Lisa\Renderer</Filter>
     </ClInclude>
@@ -211,6 +217,9 @@
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLUniformBuffer.h">
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h">
@@ -1547,6 +1556,9 @@
     <ClCompile Include="src\Lisa\Renderer\Texture.cpp">
       <Filter>src\Lisa\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\Lisa\Renderer\UniformBuffer.cpp">
+      <Filter>src\Lisa\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\Lisa\Renderer\VertexArray.cpp">
       <Filter>src\Lisa\Renderer</Filter>
     </ClCompile>
@@ -1578,6 +1590,9 @@
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLTexture.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLUniformBuffer.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp">
