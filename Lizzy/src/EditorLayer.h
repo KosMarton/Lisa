@@ -2,6 +2,7 @@
 
 #include "Lisa.h"
 #include "Panels/SceneHierarchyPanel.h"
+#include "Panels/ContentBrowserPanel.h"
 
 #include "Lisa/Renderer/EditorCamera.h"
 
@@ -57,6 +58,7 @@ namespace Lisa {
 
 		// Panels
 		SceneHierarchyPanel m_SceneHierarchyPanel;
+		ContentBrowserPanel m_ContentBrowserPanel;
 	};
 
 }
