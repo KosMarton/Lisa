@@ -2,6 +2,8 @@
 
 #include <filesystem>
 
+#include "Lisa/Renderer/Texture.h"
+
 namespace Lisa {
 
 	class ContentBrowserPanel
@@ -12,6 +14,8 @@ namespace Lisa {
 		void OnImGuiRender();
 	private:
 		std::filesystem::path m_CurrentDirectory;
+		Ref<Texture2D> m_DirectoryIcon;
+		Ref<Texture2D> m_FileIcon;
 	};
 
 }
