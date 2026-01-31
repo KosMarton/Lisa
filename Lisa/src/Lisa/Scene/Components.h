@@ -8,6 +8,7 @@
 
 #include "Lisa/Scene/SceneCamera.h"
 #include "Lisa/Scene/ScriptableEntity.h"
+#include "Lisa/Renderer/Texture.h"
 
 namespace Lisa {
 
@@ -45,6 +46,8 @@ namespace Lisa {
 	struct SpriteRendererComponent
 	{
 		glm::vec4 Color{ 1.0f, 1.0f, 1.0f, 1.0f };
+		Ref<Texture2D> Texture;
+		float TilingFactor = 1.0f;
 
 		SpriteRendererComponent() = default;
 		SpriteRendererComponent(const SpriteRendererComponent&) = default;
