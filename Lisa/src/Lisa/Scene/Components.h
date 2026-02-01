@@ -1,16 +1,24 @@
 #pragma once
 
+#include "Lisa/Scene/SceneCamera.h"
+#include "Lisa/Core/UUID.h"
+#include "Lisa/Renderer/Texture.h"
+
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
 #define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtx/quaternion.hpp>
 
-#include "Lisa/Scene/SceneCamera.h"
-#include "Lisa/Scene/ScriptableEntity.h"
-#include "Lisa/Renderer/Texture.h"
-
 namespace Lisa {
+
+	struct IDComponent
+	{
+		UUID ID;
+
+		IDComponent() = default;
+		IDComponent(const IDComponent&) = default;
+	};
 
 	struct TagComponent
 	{
@@ -64,6 +72,9 @@ namespace Lisa {
 		CameraComponent() = default;
 		CameraComponent(const CameraComponent&) = default;
 	};
+
+	// Forward declaration
+	class ScriptableEntity;
 
 	struct NativeScriptComponent
 	{

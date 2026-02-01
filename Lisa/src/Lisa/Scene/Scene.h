@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Lisa/Core/Timestep.h"
+#include "Lisa/Core/UUID.h"
 #include "Lisa/Renderer/EditorCamera.h"
 
 #include "entt.hpp"
@@ -18,6 +19,7 @@ namespace Lisa {
 		~Scene();
 
 		Entity CreateEntity(const std::string& name = std::string());
+		Entity CreateEntityWithUUID(UUID uuid, const std::string& name = std::string());
 		void DestroyEntity(Entity entity);
 
 		void OnRuntimeStart();

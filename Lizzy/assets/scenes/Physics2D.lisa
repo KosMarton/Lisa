@@ -1,6 +1,6 @@
 Scene: Untitled
 Entities:
-  - Entity: 12837192831273
+  - Entity: 7599846292996003485
     TagComponent:
       Tag: Floor
     TransformComponent:
@@ -19,12 +19,12 @@ Entities:
       Friction: 0.5
       Restitution: 0
       RestitutionThreshold: 0.5
-  - Entity: 12837192831273
+  - Entity: 16878610430667834666
     TagComponent:
       Tag: Sprite
     TransformComponent:
-      Translation: [0.0122815203, 0.434977531, -1.39698386e-09]
-      Rotation: [0, 0, -0.450107157]
+      Translation: [0.0846959874, 0.676894784, 0]
+      Rotation: [0, 0, 0.000462037278]
       Scale: [0.602999866, 0.602999866, 0.602999985]
     SpriteRendererComponent:
       Color: [1, 1, 1, 1]
@@ -38,7 +38,7 @@ Entities:
       Friction: 0.5
       Restitution: 0.5
       RestitutionThreshold: 0.5
-  - Entity: 12837192831273
+  - Entity: 14572728773462914021
     TagComponent:
       Tag: Camera
     TransformComponent:

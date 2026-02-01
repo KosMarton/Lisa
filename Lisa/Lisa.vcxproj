@@ -164,6 +164,7 @@
     <ClInclude Include="src\Lisa\Core\PlatformDetection.h" />
     <ClInclude Include="src\Lisa\Core\Timer.h" />
     <ClInclude Include="src\Lisa\Core\Timestep.h" />
+    <ClInclude Include="src\Lisa\Core\UUID.h" />
     <ClInclude Include="src\Lisa\Core\Window.h" />
     <ClInclude Include="src\Lisa\Debug\Instrumentor.h" />
     <ClInclude Include="src\Lisa\Events\ApplicationEvent.h" />
@@ -631,6 +632,7 @@
     <ClCompile Include="src\Lisa\Core\Layer.cpp" />
     <ClCompile Include="src\Lisa\Core\LayerStack.cpp" />
     <ClCompile Include="src\Lisa\Core\Log.cpp" />
+    <ClCompile Include="src\Lisa\Core\UUID.cpp" />
     <ClCompile Include="src\Lisa\Core\Window.cpp" />
     <ClCompile Include="src\Lisa\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Lisa\ImGui\ImGuiLayer.cpp" />
