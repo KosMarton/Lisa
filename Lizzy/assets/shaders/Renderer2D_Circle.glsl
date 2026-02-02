@@ -1,6 +1,6 @@
 //------------------
 // --- Lisa ---
-// Renderer2D Circle
+// Renderer2D Circle Shader
 //------------------
 
 #type vertex
