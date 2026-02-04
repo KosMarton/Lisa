@@ -1,21 +1,21 @@
 [submodule "Lisa/vendor/spdlog"]
 	path = Lisa/vendor/spdlog
-	url = ../../gabime/spdlog.git
+	url = https://github.com/KosMarton/spdlog.git
 [submodule "Lisa/vendor/GLFW"]
 	path = Lisa/vendor/GLFW
 	url = https://github.com/KosMarton/glfw.git
 [submodule "Lisa/vendor/imgui"]
 	path = Lisa/vendor/imgui
-	url = ../../TheCherno/imgui.git
+	url = https://github.com/KosMarton/imgui.git
 [submodule "Lisa/vendor/glm"]
 	path = Lisa/vendor/glm
-	url = ../../g-truc/glm.git
+	url = https://github.com/KosMarton/glm.git
 [submodule "Lisa/vendor/yaml-cpp"]
 	path = Lisa/vendor/yaml-cpp
-	url = https://github.com/thecherno/yaml-cpp
+	url = https://github.com/KosMarton/yaml-cpp.git
 [submodule "Lisa/vendor/ImGuizmo"]
 	path = Lisa/vendor/ImGuizmo
-	url = https://github.com/thecherno/imguizmo
+	url = https://github.com/KosMarton/ImGuizmo.git
 [submodule "Lisa/vendor/Box2D"]
 	path = Lisa/vendor/Box2D
-	url = https://github.com/thecherno/box2d
+	url = https://github.com/KosMarton/box2d.git
