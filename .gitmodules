@@ -3,7 +3,7 @@
 	url = ../../gabime/spdlog.git
 [submodule "Lisa/vendor/GLFW"]
 	path = Lisa/vendor/GLFW
-	url = ../../TheCherno/GLFW.git
+	url = https://github.com/KosMarton/glfw.git
 [submodule "Lisa/vendor/imgui"]
 	path = Lisa/vendor/imgui
 	url = ../../TheCherno/imgui.git
