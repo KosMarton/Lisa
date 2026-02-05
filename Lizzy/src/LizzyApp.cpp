@@ -8,8 +8,8 @@ namespace Lisa {
 	class Lizzy : public Application
 	{
 	public:
-		Lizzy(ApplicationCommandLineArgs args)
-			: Application("Lizzy", args)
+		Lizzy(const ApplicationSpecification& specification)
+			: Application(specification)
 		{
 			PushLayer(new EditorLayer());
 		}
@@ -21,7 +21,11 @@ namespace Lisa {
 
 	Application* CreateApplication(ApplicationCommandLineArgs args)
 	{
-		return new Lizzy(args);
+		ApplicationSpecification spec;
+		spec.Name = "Lizzy";
+		spec.CommandLineArgs = args;
+
+		return new Lizzy(spec);
 	}
 
 }

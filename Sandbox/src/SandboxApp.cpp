@@ -7,8 +7,8 @@
 class Sandbox : public Lisa::Application
 {
 public:
-	Sandbox(Lisa::ApplicationCommandLineArgs args)
-		: Application("Sandbox", args)
+	Sandbox(const Lisa::ApplicationSpecification& specification)
+		: Lisa::Application(specification)
 	{
 		// PushLayer(new ExampleLayer());
 		PushLayer(new Sandbox2D());
@@ -21,5 +21,10 @@ public:
 
 Lisa::Application* Lisa::CreateApplication(Lisa::ApplicationCommandLineArgs args)
 {
-	return new Sandbox(args);
+	Lisa::ApplicationSpecification spec;
+	spec.Name = "Sandbox";
+	spec.WorkingDirectory = "../Lizzy";
+	spec.CommandLineArgs = args;
+
+	return new Sandbox(spec);
 }
