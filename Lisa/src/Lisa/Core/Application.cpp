@@ -6,8 +6,7 @@
 #include "Lisa/Renderer/Renderer.h"
 
 #include "Lisa/Core/Input.h"
-
-#include <GLFW/glfw3.h>
+#include "Lisa/Utils/PlatformUtils.h"
 
 namespace Lisa {
 
@@ -81,7 +80,7 @@ namespace Lisa {
 		{
 			LS_PROFILE_SCOPE("RunLoop");
 
-			float time = (float)glfwGetTime();
+			float time = Time::GetTime();
 			Timestep timestep = time - m_LastFrameTime;
 			m_LastFrameTime = time;
 
