@@ -10,8 +10,8 @@ Entities:
     CameraComponent:
       Camera:
         ProjectionType: 1
-        PerspectiveFOV: 0.785398185
-        PerspectiveNear: 0.00999999978
+        PerspectiveFOV: 0.7853982
+        PerspectiveNear: 0.01
         PerspectiveFar: 1000
         OrthographicSize: 10
         OrthographicNear: -1
@@ -28,8 +28,8 @@ Entities:
     CameraComponent:
       Camera:
         ProjectionType: 0
-        PerspectiveFOV: 0.785398185
-        PerspectiveNear: 0.00999999978
+        PerspectiveFOV: 0.7853982
+        PerspectiveNear: 0.01
         PerspectiveFar: 1000
         OrthographicSize: 10
         OrthographicNear: -1
@@ -38,19 +38,23 @@ Entities:
       FixedAspectRatio: false
   - Entity: 13258213411377621011
     TagComponent:
-      Tag: Red Square
+      Tag: Logo
     TransformComponent:
-      Translation: [-1.10000002, 0, 0]
+      Translation: [0, 0, 3]
       Rotation: [0, 0, 0]
       Scale: [1, 1, 1]
     SpriteRendererComponent:
-      Color: [1, 0, 0, 1]
+      Color: [1, 1, 1, 1]
+      TexturePath: assets\textures\ChernoLogo.png
+      TilingFactor: 1
   - Entity: 12633281981985842145
     TagComponent:
-      Tag: Green Square
+      Tag: CheckerboardBG
     TransformComponent:
-      Translation: [1.5, 1.10000002, -11.1000004]
+      Translation: [0, 0, 0]
       Rotation: [0, 0, 0]
-      Scale: [1, 1, 1]
+      Scale: [5, 5, 1]
     SpriteRendererComponent:
-      Color: [0, 1, 0, 1]
+      Color: [1, 1, 1, 1]
+      TexturePath: assets\textures\Checkerboard.png
+      TilingFactor: 10
