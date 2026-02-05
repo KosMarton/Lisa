@@ -13,10 +13,6 @@ namespace Lisa {
 		{
 			PushLayer(new EditorLayer());
 		}
-
-		~Lizzy()
-		{
-		}
 	};
 
 	Application* CreateApplication(ApplicationCommandLineArgs args)
