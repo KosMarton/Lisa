@@ -300,6 +300,7 @@ namespace Lisa {
 		}
 		catch (YAML::ParserException e)
 		{
+			LS_CORE_ERROR("Failed to load .lisa file '{0}'\n	{1}", filepath, e.what());
 			return false;
 		}
 
