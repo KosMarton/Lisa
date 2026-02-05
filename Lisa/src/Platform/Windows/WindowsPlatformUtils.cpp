@@ -1,12 +1,11 @@
 #include "lspch.h"
 #include "Lisa/Utils/PlatformUtils.h"
+#include "Lisa/Core/Application.h"
 
 #include <commdlg.h>
 #include <GLFW/glfw3.h>
 #define GLFW_EXPOSE_NATIVE_WIN32
 #include <GLFW/glfw3native.h>
-
-#include "Lisa/Core/Application.h"
 
 namespace Lisa {
 

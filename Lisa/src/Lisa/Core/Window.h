@@ -1,9 +1,9 @@
 #pragma once
 
-#include <sstream>
-
 #include "Lisa/Core/Base.h"
 #include "Lisa/Events/Event.h"
+
+#include <sstream>
 
 namespace Lisa {
 

@@ -1,8 +1,9 @@
 #pragma once
 
-#include <glm/glm.hpp>
 #include "Lisa/Core/KeyCodes.h"
 #include "Lisa/Core/MouseCodes.h"
+
+#include <glm/glm.hpp>
 
 namespace Lisa {
 

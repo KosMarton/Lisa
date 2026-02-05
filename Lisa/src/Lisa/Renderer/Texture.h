@@ -1,8 +1,8 @@
 #pragma once
 
-#include <string>
-
 #include "Lisa/Core/Base.h"
+
+#include <string>
 
 namespace Lisa {
 

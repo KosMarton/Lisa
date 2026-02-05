@@ -1,8 +1,8 @@
 #pragma once
 
-#include <filesystem>
-
 #include "Lisa/Renderer/Texture.h"
+
+#include <filesystem>
 
 namespace Lisa {
 

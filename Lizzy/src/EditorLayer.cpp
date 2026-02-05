@@ -1,16 +1,14 @@
 #include "EditorLayer.h"
+#include "Lisa/Scene/SceneSerializer.h"
+#include "Lisa/Utils/PlatformUtils.h"
+#include "Lisa/Math/Math.h"
+
 #include <imgui/imgui.h>
 
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include "Lisa/Scene/SceneSerializer.h"
-
-#include "Lisa/Utils/PlatformUtils.h"
-
 #include "ImGuizmo.h"
-
-#include "Lisa/Math/Math.h"
 
 namespace Lisa {
 

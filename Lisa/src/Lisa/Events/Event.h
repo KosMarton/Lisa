@@ -1,8 +1,9 @@
 #pragma once
-#include <functional>
 
 #include "Lisa/Debug/Instrumentor.h"
 #include "Lisa/Core/Base.h"
+
+#include <functional>
 
 namespace Lisa {
 

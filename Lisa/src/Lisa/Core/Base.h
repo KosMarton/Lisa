@@ -1,8 +1,8 @@
 #pragma once
 
-#include <memory>
-
 #include "Lisa/Core/PlatformDetection.h"
+
+#include <memory>
 
 #ifdef LS_DEBUG
 	#if defined(LS_PLATFORM_WINDOWS)
