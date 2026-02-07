@@ -2,6 +2,7 @@
 **/bin/
 !vendor/premake/bin/
 bin-int/
+Intermediates/
 
 # Lisa files
 *.log
@@ -12,6 +13,7 @@ bin-int/
 **.vcxproj
 **.vcxproj.filters
 **.vcxproj.user
+**.csxproj
 
 # Directories
 Lisa/vendor/VulkanSDK

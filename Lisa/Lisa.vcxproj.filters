@@ -28,6 +28,9 @@
     <Filter Include="src\Lisa\Scene">
       <UniqueIdentifier>{82FEFD26-6ECC-F12C-5760-625343CDCD91}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Lisa\Scripting">
+      <UniqueIdentifier>{E7301139-D314-D28E-3C75-CCE12878BC10}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Lisa\Utils">
       <UniqueIdentifier>{C5922B27-B160-1F2D-9AF4-8F538661FB91}</UniqueIdentifier>
     </Filter>
@@ -200,6 +203,9 @@
     </ClInclude>
     <ClInclude Include="src\Lisa\Scene\ScriptableEntity.h">
       <Filter>src\Lisa\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lisa\Scripting\ScriptEngine.h">
+      <Filter>src\Lisa\Scripting</Filter>
     </ClInclude>
     <ClInclude Include="src\Lisa\Utils\PlatformUtils.h">
       <Filter>src\Lisa\Utils</Filter>
@@ -1579,6 +1585,9 @@
     </ClCompile>
     <ClCompile Include="src\Lisa\Scene\SceneSerializer.cpp">
       <Filter>src\Lisa\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lisa\Scripting\ScriptEngine.cpp">
+      <Filter>src\Lisa\Scripting</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
       <Filter>src\Platform\OpenGL</Filter>

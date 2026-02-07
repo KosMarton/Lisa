@@ -4,6 +4,7 @@
 #include "Lisa/Core/Log.h"
 
 #include "Lisa/Renderer/Renderer.h"
+#include "Lisa/Scripting/ScriptEngine.h"
 
 #include "Lisa/Core/Input.h"
 #include "Lisa/Utils/PlatformUtils.h"
@@ -28,6 +29,7 @@ namespace Lisa {
 		m_Window->SetEventCallback(LS_BIND_EVENT_FN(Application::OnEvent));
 
 		Renderer::Init();
+		ScriptEngine::Init();
 
 		m_ImGuiLayer = new ImGuiLayer();
 		PushOverlay(m_ImGuiLayer);
@@ -37,6 +39,7 @@ namespace Lisa {
 	{
 		LS_PROFILE_FUNCTION();
 
+		ScriptEngine::Shutdown();
 		Renderer::Shutdown();
 	}
 

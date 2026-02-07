@@ -33,6 +33,15 @@ group "Dependencies"
 	include "Lisa/vendor/yaml-cpp"
 group ""
 
-include "Lisa"
-include "Sandbox"
-include "Lizzy"
+group "Core"
+	include "Lisa"
+	include "Lisa-ScriptCore"
+group ""
+
+group "Tools"
+	include "Lizzy"
+group ""
+
+group "Misc"
+	include "Sandbox"
+group ""
