@@ -65,6 +65,8 @@ namespace Lisa {
 
 		static Scene* GetSceneContext();
 		static std::unordered_map<std::string, Ref<ScriptClass>> GetEntityClasses();
+
+		static MonoImage* GetCoreAssemblyImage();
 	private:
 		static void InitMono();
 		static void ShutdownMono();
@@ -73,6 +75,7 @@ namespace Lisa {
 		static void LoadAssemblyClasses(MonoAssembly* assembly);
 
 		friend class ScriptClass;
+		friend class ScriptGlue;
 	};
 
 }

@@ -59,9 +59,14 @@
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Dist|x64' ">
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Source\Input.cs" />
-    <Compile Include="Source\KeyCode.cs" />
-    <Compile Include="Source\Main.cs" />
+    <Compile Include="Source\Lisa\Input.cs" />
+    <Compile Include="Source\Lisa\InternalCalls.cs" />
+    <Compile Include="Source\Lisa\KeyCode.cs" />
+    <Compile Include="Source\Lisa\Scene\Components.cs" />
+    <Compile Include="Source\Lisa\Scene\Entity.cs" />
+    <Compile Include="Source\Lisa\Vector2.cs" />
+    <Compile Include="Source\Lisa\Vector3.cs" />
+    <Compile Include="Source\Camera.cs" />
     <Compile Include="Source\Player.cs" />
   </ItemGroup>
   <ItemGroup>
