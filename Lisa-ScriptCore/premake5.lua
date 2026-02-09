@@ -3,8 +3,8 @@ project "Lisa-ScriptCore"
 	language "C#"
 	dotnetframework "4.7.2"	
 
-	targetdir ("%{wks.location}/Lizzy/Resources/Scripts")
-	objdir ("%{wks.location}/Lizzy/Resources/Scripts/Intermediates")
+	targetdir ("../Lizzy/Resources/Scripts")
+	objdir ("../Lizzy/Resources/Scripts/Intermediates")
 
 	files
 	{
