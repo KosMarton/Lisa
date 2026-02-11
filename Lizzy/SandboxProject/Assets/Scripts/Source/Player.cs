@@ -13,6 +13,9 @@ namespace Sandbox
         private TransformComponent m_Transform;
         private Rigidbody2DComponent m_Rigidbody;
 
+        public float Speed;
+        public float Time = 0.0f;
+
         void OnCreate()
         {
             Console.WriteLine($"Player.OnCreate - {ID}");
@@ -23,19 +26,20 @@ namespace Sandbox
 
         void OnUpdate(float ts)
         {
+            Time += ts;
             // Console.WriteLine($"Player.OnUpdate: {ts}");
 
-            float speed = 0.01f;
+            float speed = Speed;
             Vector3 velocity = Vector3.Zero;
 
-            if (Input.IsKeyDown(KeyCode.W))
+            if (Input.IsKeyDown(KeyCode.Up))
                 velocity.Y = 1.0f;
-            else if (Input.IsKeyDown(KeyCode.S))
+            else if (Input.IsKeyDown(KeyCode.Down))
                 velocity.Y = -1.0f;
 
-            if (Input.IsKeyDown(KeyCode.A))
+            if (Input.IsKeyDown(KeyCode.Left))
                 velocity.X = -1.0f;
-            else if (Input.IsKeyDown(KeyCode.D))
+            else if (Input.IsKeyDown(KeyCode.Right))
                 velocity.X = 1.0f;
 
             velocity *= speed;
@@ -49,3 +53,20 @@ namespace Sandbox
 
     }
 }
+
+/*
+ public float FloatVar;
+ public double DoubleVar;
+ public bool BoolVar;
+ public char UByteVar;
+ public short ShortVar;
+ public int IntVar;
+ public long LongVar;
+ public byte ByteVar;
+ public ushort UShortVar;
+ public uint UIntVar;
+ public ulong ULongVar;
+ public Vector2 Vector2Var;
+ public Vector3 Vector3Var;
+ public Vector4 Vector4Var;
+ */
