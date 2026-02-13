@@ -12,23 +12,23 @@ namespace Lisa {
 
 	static std::unordered_map<std::string, ScriptFieldType> s_ScriptFieldTypeMap =
 	{
-		{ "System.Single", ScriptFieldType::Float   },
-		{ "System.Double", ScriptFieldType::Double  },
-		{ "System.Boolean",   ScriptFieldType::Bool },
-		{ "System.Char",   ScriptFieldType::Char    },
-		{ "System.Int16",  ScriptFieldType::Short   },
-		{ "System.Int32",    ScriptFieldType::Int   },
-		{ "System.Int64",    ScriptFieldType::Long  },
-		{ "System.Byte",   ScriptFieldType::Byte    },
-		{ "System.UInt16", ScriptFieldType::UShort  },
-		{ "System.UInt32",   ScriptFieldType::UInt  },
-		{ "System.UInt64",  ScriptFieldType::ULong  },
+		{ "System.Single",  ScriptFieldType::Float   },
+		{ "System.Double",  ScriptFieldType::Double  },
+		{ "System.Boolean", ScriptFieldType::Bool    },
+		{ "System.Char",    ScriptFieldType::Char    },
+		{ "System.Int16",   ScriptFieldType::Short   },
+		{ "System.Int32",   ScriptFieldType::Int     },
+		{ "System.Int64",   ScriptFieldType::Long    },
+		{ "System.Byte",    ScriptFieldType::Byte    },
+		{ "System.UInt16",  ScriptFieldType::UShort  },
+		{ "System.UInt32",  ScriptFieldType::UInt    },
+		{ "System.UInt64",  ScriptFieldType::ULong   },
 
-		{ "Lisa.Vector2",  ScriptFieldType::Vector2 },
-		{ "Lisa.Vector3",  ScriptFieldType::Vector3 },
-		{ "Lisa.Vector4",  ScriptFieldType::Vector4 },
+		{ "Lisa.Vector2",   ScriptFieldType::Vector2 },
+		{ "Lisa.Vector3",   ScriptFieldType::Vector3 },
+		{ "Lisa.Vector4",   ScriptFieldType::Vector4 },
 
-		{ "Lisa.Entity",   ScriptFieldType::Entity  }
+		{ "Lisa.Entity",    ScriptFieldType::Entity  }
 	};
 
 	namespace Utils {
@@ -160,8 +160,10 @@ namespace Lisa {
 
 		std::unordered_map<std::string, Ref<ScriptClass>> EntityClasses;
 		std::unordered_map<UUID, Ref<ScriptInstance>> EntityInstances;
+		std::unordered_map<UUID, ScriptFieldMap> EntityScriptFields;
 
 		// Runtime
+
 		Scene* SceneContext = nullptr;
 	};
 
@@ -281,8 +283,19 @@ namespace Lisa {
 		const auto& sc = entity.GetComponent<ScriptComponent>();
 		if (ScriptEngine::EntityClassExists(sc.ClassName))
 		{
+			UUID entityID = entity.GetUUID();
+
 			Ref<ScriptInstance> instance = CreateRef<ScriptInstance>(s_Data->EntityClasses[sc.ClassName], entity);
-			s_Data->EntityInstances[entity.GetUUID()] = instance;
+			s_Data->EntityInstances[entityID] = instance;
+
+			// Copy field values
+			if (s_Data->EntityScriptFields.find(entityID) != s_Data->EntityScriptFields.end())
+			{
+				const ScriptFieldMap& fieldMap = s_Data->EntityScriptFields.at(entityID);
+				for (const auto& [name, fieldInstance] : fieldMap)
+					instance->SetFieldValueInternal(name, fieldInstance.m_Buffer);
+			}
+
 			instance->InvokeOnCreate();
 		}
 	}
@@ -310,6 +323,14 @@ namespace Lisa {
 		return it->second;
 	}
 
+	Ref<ScriptClass> ScriptEngine::GetEntityClass(const std::string& name)
+	{
+		if (s_Data->EntityClasses.find(name) == s_Data->EntityClasses.end())
+			return nullptr;
+
+		return s_Data->EntityClasses.at(name);
+	}
+
 	void ScriptEngine::OnRuntimeStop()
 	{
 		s_Data->SceneContext = nullptr;
@@ -320,6 +341,14 @@ namespace Lisa {
 	std::unordered_map<std::string, Ref<ScriptClass>> ScriptEngine::GetEntityClasses()
 	{
 		return s_Data->EntityClasses;
+	}
+
+	ScriptFieldMap& ScriptEngine::GetScriptFieldMap(Entity entity)
+	{
+		LS_CORE_ASSERT(entity);
+
+		UUID entityID = entity.GetUUID();
+		return s_Data->EntityScriptFields[entityID];
 	}
 
 	void ScriptEngine::LoadAssemblyClasses()
