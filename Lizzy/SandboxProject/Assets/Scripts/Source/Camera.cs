@@ -12,25 +12,32 @@ namespace Sandbox
     {
         public Entity OtherEntity;
 
+        public float DistanceFromPlayer = 5.0f;
+
+        private Entity m_Player;
+
+        void OnCreate()
+        {
+            m_Player = FindEntityByName("Player");
+        }
+
         void OnUpdate(float ts)
         {
-            float speed = 3.0f;
+            if (m_Player != null)
+                Translation = new Vector3(m_Player.Translation.XY, DistanceFromPlayer);
+
+            float speed = 1.0f;
             Vector3 velocity = Vector3.Zero;
 
-            if (Input.IsKeyDown(KeyCode.W))
+            if (Input.IsKeyDown(KeyCode.Up))
                 velocity.Y = 1.0f;
-            else if (Input.IsKeyDown(KeyCode.S))
+            else if (Input.IsKeyDown(KeyCode.Down))
                 velocity.Y = -1.0f;
 
-            if (Input.IsKeyDown(KeyCode.A))
+            if (Input.IsKeyDown(KeyCode.Left))
                 velocity.X = -1.0f;
-            else if (Input.IsKeyDown(KeyCode.D))
+            else if (Input.IsKeyDown(KeyCode.Right))
                 velocity.X = 1.0f;
-
-            if (Input.IsKeyDown(KeyCode.Q))
-                velocity.Z -= 1.2f;
-            else if (Input.IsKeyDown(KeyCode.E))
-                velocity.Z += 1.2f;
 
             velocity *= speed;
 

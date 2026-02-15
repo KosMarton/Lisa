@@ -32,15 +32,26 @@ namespace Sandbox
             float speed = Speed;
             Vector3 velocity = Vector3.Zero;
 
-            if (Input.IsKeyDown(KeyCode.Up))
+            if (Input.IsKeyDown(KeyCode.W))
                 velocity.Y = 1.0f;
-            else if (Input.IsKeyDown(KeyCode.Down))
+            else if (Input.IsKeyDown(KeyCode.S))
                 velocity.Y = -1.0f;
 
-            if (Input.IsKeyDown(KeyCode.Left))
+            if (Input.IsKeyDown(KeyCode.A))
                 velocity.X = -1.0f;
-            else if (Input.IsKeyDown(KeyCode.Right))
+            else if (Input.IsKeyDown(KeyCode.D))
                 velocity.X = 1.0f;
+
+            Entity cameraEntity = FindEntityByName("Camera");
+            if (cameraEntity != null)
+            {
+                Camera camera = cameraEntity.As<Camera>();
+
+                if (Input.IsKeyDown(KeyCode.Q))
+                    camera.DistanceFromPlayer += speed * 2.0f * ts;
+                else if (Input.IsKeyDown(KeyCode.E))
+                    camera.DistanceFromPlayer -= speed * 2.0f * ts;
+            }
 
             velocity *= speed * ts;
 
@@ -53,20 +64,3 @@ namespace Sandbox
 
     }
 }
-
-/*
- public float FloatVar;
- public double DoubleVar;
- public bool BoolVar;
- public char UByteVar;
- public short ShortVar;
- public int IntVar;
- public long LongVar;
- public byte ByteVar;
- public ushort UShortVar;
- public uint UIntVar;
- public ulong ULongVar;
- public Vector2 Vector2Var;
- public Vector3 Vector3Var;
- public Vector4 Vector4Var;
- */

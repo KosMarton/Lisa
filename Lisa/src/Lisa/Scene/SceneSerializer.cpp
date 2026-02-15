@@ -473,7 +473,7 @@ namespace Lisa {
 							// TODO: Turn this assert into editor log warning
 							LS_CORE_ASSERT(fields.find(name) != fields.end());
 
-							if (fields.find(name) != fields.end())
+							if (fields.find(name) == fields.end())
 								continue;
 
 							fieldInstance.Field = fields.at(name);
