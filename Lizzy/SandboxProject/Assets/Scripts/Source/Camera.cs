@@ -26,7 +26,7 @@ namespace Sandbox
             if (m_Player != null)
                 Translation = new Vector3(m_Player.Translation.XY, DistanceFromPlayer);
 
-            float speed = 1.0f;
+            float speed = 1.5f;
             Vector3 velocity = Vector3.Zero;
 
             if (Input.IsKeyDown(KeyCode.Up))
@@ -40,6 +40,7 @@ namespace Sandbox
                 velocity.X = 1.0f;
 
             velocity *= speed;
+            DistanceFromPlayer += ts;
 
             Vector3 translation = Translation;
             translation += velocity * ts;

@@ -18,8 +18,9 @@ project "Lizzy"
 		"%{wks.location}/Lisa/vendor/spdlog/include",
 		"%{wks.location}/Lisa/src",
 		"%{wks.location}/Lisa/vendor",
-		"%{IncludeDir.glm}",
 		"%{IncludeDir.entt}",
+		"%{IncludeDir.filewatch}",
+		"%{IncludeDir.glm}",
 		"%{IncludeDir.ImGuizmo}"
 	}
 

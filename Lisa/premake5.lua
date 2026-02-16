@@ -34,6 +34,7 @@ project "Lisa"
 		"src",
 		"vendor/spdlog/include",
 		"%{IncludeDir.Box2D}",
+		"%{IncludeDir.filewatch}",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
@@ -43,7 +44,7 @@ project "Lisa"
 		"%{IncludeDir.mono}",
 		"%{IncludeDir.yaml_cpp}",
 		"%{IncludeDir.ImGuizmo}",
-		"%{IncludeDir.VulkanSDK}"
+		"%{IncludeDir.VulkanSDK}",
 	}
 
 	links
