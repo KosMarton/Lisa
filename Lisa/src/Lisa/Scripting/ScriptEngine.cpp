@@ -156,6 +156,20 @@ namespace Lisa {
 
 	static ScriptEngineData* s_Data = nullptr;
 
+	static void OnAppAssemblyFileSystemEvent(const std::string& path, const filewatch::Event change_type)
+	{
+		if (!s_Data->AssemblyReloadPending && change_type == filewatch::Event::modified)
+		{
+			s_Data->AssemblyReloadPending = true;
+
+			Application::Get().SubmitToMainThread([]()
+			{
+				s_Data->AppAssemblyFileWatcher.reset();
+				ScriptEngine::ReloadAssembly();
+			});
+		}
+	}
+
 	void ScriptEngine::Init()
 	{
 		s_Data = new ScriptEngineData();
@@ -244,20 +258,6 @@ namespace Lisa {
 		s_Data->CoreAssembly = Utils::LoadMonoAssembly(filepath);
 		s_Data->CoreAssemblyImage = mono_assembly_get_image(s_Data->CoreAssembly);
 		// Utils::PrintAssemblyTypes(s_Data->CoreAssembly);
-	}
-
-	static void OnAppAssemblyFileSystemEvent(const std::string& path, const filewatch::Event change_type)
-	{
-		if (!s_Data->AssemblyReloadPending && change_type == filewatch::Event::modified)
-		{
-			s_Data->AssemblyReloadPending = true;
-
-			Application::Get().SubmitToMainThread([]()
-			{
-				s_Data->AppAssemblyFileWatcher.reset();
-				ScriptEngine::ReloadAssembly();
-			});
-		}
 	}
 
 	void ScriptEngine::LoadAppAssembly(const std::filesystem::path& filepath)
