@@ -154,7 +154,9 @@
     <ClInclude Include="src\Lisa\Core\Application.h" />
     <ClInclude Include="src\Lisa\Core\Assert.h" />
     <ClInclude Include="src\Lisa\Core\Base.h" />
+    <ClInclude Include="src\Lisa\Core\Buffer.h" />
     <ClInclude Include="src\Lisa\Core\EntryPoint.h" />
+    <ClInclude Include="src\Lisa\Core\FileSystem.h" />
     <ClInclude Include="src\Lisa\Core\Input.h" />
     <ClInclude Include="src\Lisa\Core\KeyCodes.h" />
     <ClInclude Include="src\Lisa\Core\Layer.h" />
@@ -631,6 +633,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lisa\Core\Application.cpp" />
+    <ClCompile Include="src\Lisa\Core\FileSystem.cpp" />
     <ClCompile Include="src\Lisa\Core\Layer.cpp" />
     <ClCompile Include="src\Lisa\Core\LayerStack.cpp" />
     <ClCompile Include="src\Lisa\Core\Log.cpp" />
