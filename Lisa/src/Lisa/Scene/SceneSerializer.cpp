@@ -6,6 +6,8 @@
 #include "Lisa/Scripting/ScriptEngine.h"
 #include "Lisa/Core/UUID.h"
 
+#include "Lisa/Project/Project.h"
+
 #include <fstream>
 
 #include <yaml-cpp/yaml.h>
@@ -481,22 +483,22 @@ namespace Lisa {
 
 								switch (type)
 								{
-									READ_SCRIPT_FIELD(Float, float);
-									READ_SCRIPT_FIELD(Double, double);
-									READ_SCRIPT_FIELD(Bool, bool);
-									READ_SCRIPT_FIELD(Char, char);
-									READ_SCRIPT_FIELD(Byte, int8_t);
-									READ_SCRIPT_FIELD(Short, int16_t);
-									READ_SCRIPT_FIELD(Int, int32_t);
-									READ_SCRIPT_FIELD(Long, int64_t);
-									READ_SCRIPT_FIELD(UByte, uint8_t);
-									READ_SCRIPT_FIELD(UShort, uint16_t);
-									READ_SCRIPT_FIELD(UInt, uint32_t);
-									READ_SCRIPT_FIELD(ULong, uint64_t);
-									READ_SCRIPT_FIELD(Vector2, glm::vec2);
-									READ_SCRIPT_FIELD(Vector3, glm::vec3);
-									READ_SCRIPT_FIELD(Vector4, glm::vec4);
-									READ_SCRIPT_FIELD(Entity, UUID);
+									READ_SCRIPT_FIELD(Float,   float     );
+									READ_SCRIPT_FIELD(Double,  double    );
+									READ_SCRIPT_FIELD(Bool,    bool      );
+									READ_SCRIPT_FIELD(Char,    char      );
+									READ_SCRIPT_FIELD(Byte,    int8_t    );
+									READ_SCRIPT_FIELD(Short,   int16_t   );
+									READ_SCRIPT_FIELD(Int,     int32_t   );
+									READ_SCRIPT_FIELD(Long,    int64_t   );
+									READ_SCRIPT_FIELD(UByte,   uint8_t   );
+									READ_SCRIPT_FIELD(UShort,  uint16_t  );
+									READ_SCRIPT_FIELD(UInt,    uint32_t  );
+									READ_SCRIPT_FIELD(ULong,   uint64_t  );
+									READ_SCRIPT_FIELD(Vector2, glm::vec2 );
+									READ_SCRIPT_FIELD(Vector3, glm::vec3 );
+									READ_SCRIPT_FIELD(Vector4, glm::vec4 );
+									READ_SCRIPT_FIELD(Entity,  UUID      );
 								}
 							}
 						}
@@ -510,7 +512,11 @@ namespace Lisa {
 					auto& src = deserializedEntity.AddComponent<SpriteRendererComponent>();
 					src.Color = spriteRendererComponent["Color"].as<glm::vec4>();
 					if (spriteRendererComponent["TexturePath"])
-						src.Texture = Texture2D::Create(spriteRendererComponent["TexturePath"].as<std::string>());
+					{
+						std::string texturePath = spriteRendererComponent["TexturePath"].as<std::string>();
+						auto path = Project::GetAssetFileSystemPath(texturePath);
+						src.Texture = Texture2D::Create(path.string());
+					}
 
 					if (spriteRendererComponent["TilingFactor"])
 						src.TilingFactor = spriteRendererComponent["TilingFactor"].as<float>();

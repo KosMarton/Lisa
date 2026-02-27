@@ -23,6 +23,8 @@
 #include "Lisa/Scene/ScriptableEntity.h"
 #include "Lisa/Scene/Components.h"
 
+#include "Lisa/Project/Project.h"
+
 // ---Renderer--------------------------------
 #include "Lisa/Renderer/Renderer.h"
 #include "Lisa/Renderer/Renderer2D.h"

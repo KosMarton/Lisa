@@ -1508,6 +1508,8 @@
     </ClInclude>
     <ClInclude Include="src\Lisa\Core\Buffer.h" />
     <ClInclude Include="src\Lisa\Core\FileSystem.h" />
+    <ClInclude Include="src\Lisa\Project\Project.h" />
+    <ClInclude Include="src\Lisa\Project\ProjectSerializer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lisa\Core\Application.cpp">
@@ -1640,5 +1642,7 @@
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
     <ClCompile Include="src\Lisa\Core\FileSystem.cpp" />
+    <ClCompile Include="src\Lisa\Project\Project.cpp" />
+    <ClCompile Include="src\Lisa\Project\ProjectSerializer.cpp" />
   </ItemGroup>
 </Project>

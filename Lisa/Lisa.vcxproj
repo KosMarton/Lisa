@@ -175,6 +175,8 @@
     <ClInclude Include="src\Lisa\Events\MouseEvent.h" />
     <ClInclude Include="src\Lisa\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Lisa\Math\Math.h" />
+    <ClInclude Include="src\Lisa\Project\Project.h" />
+    <ClInclude Include="src\Lisa\Project\ProjectSerializer.h" />
     <ClInclude Include="src\Lisa\Renderer\Buffer.h" />
     <ClInclude Include="src\Lisa\Renderer\Camera.h" />
     <ClInclude Include="src\Lisa\Renderer\EditorCamera.h" />
@@ -642,6 +644,8 @@
     <ClCompile Include="src\Lisa\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Lisa\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Lisa\Math\Math.cpp" />
+    <ClCompile Include="src\Lisa\Project\Project.cpp" />
+    <ClCompile Include="src\Lisa\Project\ProjectSerializer.cpp" />
     <ClCompile Include="src\Lisa\Renderer\Buffer.cpp" />
     <ClCompile Include="src\Lisa\Renderer\EditorCamera.cpp" />
     <ClCompile Include="src\Lisa\Renderer\Framebuffer.cpp" />
