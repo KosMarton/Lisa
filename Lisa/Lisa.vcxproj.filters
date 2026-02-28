@@ -1510,6 +1510,7 @@
     <ClInclude Include="src\Lisa\Core\FileSystem.h" />
     <ClInclude Include="src\Lisa\Project\Project.h" />
     <ClInclude Include="src\Lisa\Project\ProjectSerializer.h" />
+    <ClInclude Include="src\Lisa\UI\UI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lisa\Core\Application.cpp">
