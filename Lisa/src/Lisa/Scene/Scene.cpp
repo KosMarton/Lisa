@@ -6,10 +6,11 @@
 #include "Lisa/Scene/ScriptableEntity.h"
 #include "Lisa/Scripting/ScriptEngine.h"
 #include "Lisa/Renderer/Renderer2D.h"
+#include "Lisa/Physics/Physics2D.h"
 
 #include <glm/glm.hpp>
 
-#include "Lisa/Scene/Entity.h"
+//#include "Lisa/Scene/Entity.h"
 
 // Box2D
 #include <box2d/b2_world.h>
@@ -19,19 +20,6 @@
 #include <box2d/b2_circle_shape.h>
 
 namespace Lisa {
-
-	static b2BodyType Rigidbody2DTypeToBox2DBody(Rigidbody2DComponent::BodyType bodyType)
-	{
-		switch (bodyType)
-		{
-			case Rigidbody2DComponent::BodyType::Static:    return b2_staticBody;
-			case Rigidbody2DComponent::BodyType::Dynamic:   return b2_dynamicBody;
-			case Rigidbody2DComponent::BodyType::Kinematic: return b2_kinematicBody;
-		}
-
-		LS_CORE_ASSERT(false, "Unknown body type");
-		return b2_staticBody;
-	}
 
 	Scene::Scene()
 	{
@@ -343,10 +331,13 @@ namespace Lisa {
 		m_StepFrames = frames;
 	}
 
-	void Scene::DuplicateEntity(Entity entity)
+	Entity Scene::DuplicateEntity(Entity entity)
 	{
-		Entity newEntity = CreateEntity(entity.GetName());
+		// Copy name because we're going to modify component data structure
+		std::string name = entity.GetName();
+		Entity newEntity = CreateEntity(name);
 		CopyComponentIfExists(AllComponents{}, newEntity, entity);
+		return newEntity;
 	}
 
 	Entity Scene::FindEntityByName(std::string_view name)
@@ -382,7 +373,7 @@ namespace Lisa {
 			auto& rb2d = entity.GetComponent<Rigidbody2DComponent>();
 
 			b2BodyDef bodyDef;
-			bodyDef.type = Rigidbody2DTypeToBox2DBody(rb2d.Type);
+			bodyDef.type = Utils::Rigidbody2DTypeToBox2DBody(rb2d.Type);
 			bodyDef.position.Set(transform.Translation.x, transform.Translation.y);
 			bodyDef.angle = transform.Rotation.z;
 

@@ -1511,6 +1511,7 @@
     <ClInclude Include="src\Lisa\Project\Project.h" />
     <ClInclude Include="src\Lisa\Project\ProjectSerializer.h" />
     <ClInclude Include="src\Lisa\UI\UI.h" />
+    <ClInclude Include="src\Lisa\Physics\Physics2D.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lisa\Core\Application.cpp">

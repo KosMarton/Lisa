@@ -17,6 +17,8 @@
 #include "Lisa/Core/Buffer.h"
 #include "Lisa/Core/FileSystem.h"
 
+#include "Lisa/Project/Project.h"
+
 namespace Lisa {
 
 	static std::unordered_map<std::string, ScriptFieldType> s_ScriptFieldTypeMap =
@@ -172,7 +174,9 @@ namespace Lisa {
 			LS_CORE_ERROR("[ScriptEngine]: Could not load Lisa-ScriptCore assembly");
 			return;
 		}
-		status = LoadAppAssembly("SandboxProject/Assets/Scripts/Binaries/Sandbox.dll");
+
+		auto scriptModulePath = Project::GetAssetDirectory() / Project::GetActive()->GetConfig().ScriptModulePath;
+		status = LoadAppAssembly(scriptModulePath);
 		if (!status)
 		{
 			LS_CORE_ERROR("[ScriptEngine]: Could not load app assembly");

@@ -175,6 +175,7 @@
     <ClInclude Include="src\Lisa\Events\MouseEvent.h" />
     <ClInclude Include="src\Lisa\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Lisa\Math\Math.h" />
+    <ClInclude Include="src\Lisa\Physics\Physics2D.h" />
     <ClInclude Include="src\Lisa\Project\Project.h" />
     <ClInclude Include="src\Lisa\Project\ProjectSerializer.h" />
     <ClInclude Include="src\Lisa\Renderer\Buffer.h" />
