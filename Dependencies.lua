@@ -18,6 +18,8 @@ IncludeDir["mono"] = "%{wks.location}/Lisa/vendor/mono/include"
 IncludeDir["shaderc"] = "%{wks.location}/Lisa/vendor/shaderc/include"
 IncludeDir["SPIRV_Cross"] = "%{wks.location}/Lisa/vendor/SPIRV-Cross"
 IncludeDir["VulkanSDK"] = "%{VULKAN_SDK}/Include"
+IncludeDir["msdfgen"] = "%{wks.location}/Lisa/vendor/msdf-atlas-gen/msdfgen"
+IncludeDir["msdf_atlas_gen"] = "%{wks.location}/Lisa/vendor/msdf-atlas-gen/msdf-atlas-gen"
 
 LibraryDir = {}
 

@@ -22,6 +22,12 @@
     <Filter Include="src\Lisa\Math">
       <UniqueIdentifier>{9EDDF427-0A9E-705E-D3D8-B9DB3F58B53A}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Lisa\Physics">
+      <UniqueIdentifier>{17829F04-037B-BE56-2CAD-A3DB18059E62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Lisa\Project">
+      <UniqueIdentifier>{EB22391B-D71B-586D-004E-3DF2ECA53779}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Lisa\Renderer">
       <UniqueIdentifier>{EB966A6F-57AD-6805-A024-F4260C7A398D}</UniqueIdentifier>
     </Filter>
@@ -30,6 +36,9 @@
     </Filter>
     <Filter Include="src\Lisa\Scripting">
       <UniqueIdentifier>{E7301139-D314-D28E-3C75-CCE12878BC10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Lisa\UI">
+      <UniqueIdentifier>{B25688E4-1E0C-01DA-A700-FBB013B5F7DD}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Lisa\Utils">
       <UniqueIdentifier>{C5922B27-B160-1F2D-9AF4-8F538661FB91}</UniqueIdentifier>
@@ -84,7 +93,13 @@
     <ClInclude Include="src\Lisa\Core\Base.h">
       <Filter>src\Lisa\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lisa\Core\Buffer.h">
+      <Filter>src\Lisa\Core</Filter>
+    </ClInclude>
     <ClInclude Include="src\Lisa\Core\EntryPoint.h">
+      <Filter>src\Lisa\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lisa\Core\FileSystem.h">
       <Filter>src\Lisa\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Lisa\Core\Input.h">
@@ -141,6 +156,15 @@
     <ClInclude Include="src\Lisa\Math\Math.h">
       <Filter>src\Lisa\Math</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lisa\Physics\Physics2D.h">
+      <Filter>src\Lisa\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lisa\Project\Project.h">
+      <Filter>src\Lisa\Project</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lisa\Project\ProjectSerializer.h">
+      <Filter>src\Lisa\Project</Filter>
+    </ClInclude>
     <ClInclude Include="src\Lisa\Renderer\Buffer.h">
       <Filter>src\Lisa\Renderer</Filter>
     </ClInclude>
@@ -148,6 +172,9 @@
       <Filter>src\Lisa\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Lisa\Renderer\EditorCamera.h">
+      <Filter>src\Lisa\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lisa\Renderer\Font.h">
       <Filter>src\Lisa\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Lisa\Renderer\Framebuffer.h">
@@ -209,6 +236,9 @@
     </ClInclude>
     <ClInclude Include="src\Lisa\Scripting\ScriptGlue.h">
       <Filter>src\Lisa\Scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lisa\UI\UI.h">
+      <Filter>src\Lisa\UI</Filter>
     </ClInclude>
     <ClInclude Include="src\Lisa\Utils\PlatformUtils.h">
       <Filter>src\Lisa\Utils</Filter>
@@ -1506,15 +1536,12 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lisa\Core\Buffer.h" />
-    <ClInclude Include="src\Lisa\Core\FileSystem.h" />
-    <ClInclude Include="src\Lisa\Project\Project.h" />
-    <ClInclude Include="src\Lisa\Project\ProjectSerializer.h" />
-    <ClInclude Include="src\Lisa\UI\UI.h" />
-    <ClInclude Include="src\Lisa\Physics\Physics2D.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lisa\Core\Application.cpp">
+      <Filter>src\Lisa\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lisa\Core\FileSystem.cpp">
       <Filter>src\Lisa\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Lisa\Core\Layer.cpp">
@@ -1541,10 +1568,19 @@
     <ClCompile Include="src\Lisa\Math\Math.cpp">
       <Filter>src\Lisa\Math</Filter>
     </ClCompile>
+    <ClCompile Include="src\Lisa\Project\Project.cpp">
+      <Filter>src\Lisa\Project</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lisa\Project\ProjectSerializer.cpp">
+      <Filter>src\Lisa\Project</Filter>
+    </ClCompile>
     <ClCompile Include="src\Lisa\Renderer\Buffer.cpp">
       <Filter>src\Lisa\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Lisa\Renderer\EditorCamera.cpp">
+      <Filter>src\Lisa\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lisa\Renderer\Font.cpp">
       <Filter>src\Lisa\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Lisa\Renderer\Framebuffer.cpp">
@@ -1643,8 +1679,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lisa\Core\FileSystem.cpp" />
-    <ClCompile Include="src\Lisa\Project\Project.cpp" />
-    <ClCompile Include="src\Lisa\Project\ProjectSerializer.cpp" />
   </ItemGroup>
 </Project>
