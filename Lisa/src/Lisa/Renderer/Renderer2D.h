@@ -6,6 +6,7 @@
 
 #include "Lisa/Renderer/Camera.h"
 #include "Lisa/Renderer/EditorCamera.h"
+#include "Lisa/Renderer/Font.h"
 
 #include "Lisa/Scene/Components.h"
 
@@ -45,6 +46,8 @@ namespace Lisa {
 		static void DrawRect(const glm::mat4& transform, const glm::vec4& color, int entityID = -1);
 
 		static void DrawSprite(const glm::mat4& transform, SpriteRendererComponent& src, int entityID);
+
+		static void DrawString(const std::string& string, Ref<Font> font, const glm::mat4& transform, const glm::vec4& color);
 
 		static float GetLineWidth();
 		static void SetLineWidth(float width);

@@ -184,6 +184,7 @@
     <ClInclude Include="src\Lisa\Renderer\Font.h" />
     <ClInclude Include="src\Lisa\Renderer\Framebuffer.h" />
     <ClInclude Include="src\Lisa\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Lisa\Renderer\MSDFData.h" />
     <ClInclude Include="src\Lisa\Renderer\OrthographicCamera.h" />
     <ClInclude Include="src\Lisa\Renderer\OrthographicCameraController.h" />
     <ClInclude Include="src\Lisa\Renderer\RenderCommand.h" />
