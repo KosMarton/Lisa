@@ -3,6 +3,7 @@
 #include "Lisa/Scene/SceneCamera.h"
 #include "Lisa/Core/UUID.h"
 #include "Lisa/Renderer/Texture.h"
+#include "Lisa/Renderer/Font.h"
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -160,6 +161,15 @@ namespace Lisa {
 		CircleCollider2DComponent(const CircleCollider2DComponent&) = default;
 	};
 
+	struct TextComponent
+	{
+		std::string TextString;
+		Ref<Font> FontAsset = Font::GetDefault();
+		glm::vec4 Color{ 1.0f };
+		float Kerning = 0.0f;
+		float LineSpacing = 0.0f;
+	};
+
 	template<typename... Component>
 	struct ComponentGroup
 	{
@@ -169,6 +179,6 @@ namespace Lisa {
 		ComponentGroup<TransformComponent, SpriteRendererComponent,
 			CircleRendererComponent, CameraComponent, ScriptComponent,
 			NativeScriptComponent, Rigidbody2DComponent, BoxCollider2DComponent,
-			CircleCollider2DComponent>;
+			CircleCollider2DComponent, TextComponent>;
 
 }
