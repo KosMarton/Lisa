@@ -18,15 +18,25 @@
 
 namespace Lisa {
 
+	namespace Utils {
+
+		std::string MonoStringToString(MonoString* string)
+		{
+			char* cStr = mono_string_to_utf8(string);
+			std::string str(cStr);
+			mono_free(cStr);
+			return str;
+		}
+
+	}
+
 	static std::unordered_map<MonoType*, std::function<bool(Entity)>> s_EntityHasComponentFuncs;
 
 #define LS_ADD_INTERNAL_CALL(Name) mono_add_internal_call("Lisa.InternalCalls::" #Name, Name)
 
 	static void NativeLog(MonoString* string, int parameter)
 	{
-		char* cStr = mono_string_to_utf8(string);
-		std::string str(cStr);
-		mono_free(cStr);
+		std::string str = Utils::MonoStringToString(string);
 		std::cout << str << ", " << parameter << std::endl;
 	}
 
@@ -155,6 +165,102 @@ namespace Lisa {
 		body->SetType(Utils::Rigidbody2DTypeToBox2DBody(bodyType));
 	}
 
+	static MonoString* TextComponent_GetText(UUID entityID)
+	{
+		Scene* scene = ScriptEngine::GetSceneContext();
+		LS_CORE_ASSERT(scene);
+		Entity entity = scene->GetEntityByUUID(entityID);
+		LS_CORE_ASSERT(entity);
+		LS_CORE_ASSERT(entity.HasComponent<TextComponent>());
+
+		auto& tc = entity.GetComponent<TextComponent>();
+		return ScriptEngine::CreateString(tc.TextString.c_str());
+	}
+
+	static void TextComponent_SetText(UUID entityID, MonoString* textString)
+	{
+		Scene* scene = ScriptEngine::GetSceneContext();
+		LS_CORE_ASSERT(scene);
+		Entity entity = scene->GetEntityByUUID(entityID);
+		LS_CORE_ASSERT(entity);
+		LS_CORE_ASSERT(entity.HasComponent<TextComponent>());
+
+		auto& tc = entity.GetComponent<TextComponent>();
+		tc.TextString = Utils::MonoStringToString(textString);
+	}
+
+	static void TextComponent_GetColor(UUID entityID, glm::vec4* color)
+	{
+		Scene* scene = ScriptEngine::GetSceneContext();
+		LS_CORE_ASSERT(scene);
+		Entity entity = scene->GetEntityByUUID(entityID);
+		LS_CORE_ASSERT(entity);
+		LS_CORE_ASSERT(entity.HasComponent<TextComponent>());
+
+		auto& tc = entity.GetComponent<TextComponent>();
+		*color = tc.Color;
+	}
+
+	static void TextComponent_SetColor(UUID entityID, glm::vec4* color)
+	{
+		Scene* scene = ScriptEngine::GetSceneContext();
+		LS_CORE_ASSERT(scene);
+		Entity entity = scene->GetEntityByUUID(entityID);
+		LS_CORE_ASSERT(entity);
+		LS_CORE_ASSERT(entity.HasComponent<TextComponent>());
+
+		auto& tc = entity.GetComponent<TextComponent>();
+		tc.Color = *color;
+	}
+
+	static float TextComponent_GetKerning(UUID entityID)
+	{
+		Scene* scene = ScriptEngine::GetSceneContext();
+		LS_CORE_ASSERT(scene);
+		Entity entity = scene->GetEntityByUUID(entityID);
+		LS_CORE_ASSERT(entity);
+		LS_CORE_ASSERT(entity.HasComponent<TextComponent>());
+
+		auto& tc = entity.GetComponent<TextComponent>();
+		return tc.Kerning;
+	}
+
+	static void TextComponent_SetKerning(UUID entityID, float kerning)
+	{
+		Scene* scene = ScriptEngine::GetSceneContext();
+		LS_CORE_ASSERT(scene);
+		Entity entity = scene->GetEntityByUUID(entityID);
+		LS_CORE_ASSERT(entity);
+		LS_CORE_ASSERT(entity.HasComponent<TextComponent>());
+
+		auto& tc = entity.GetComponent<TextComponent>();
+		tc.Kerning = kerning;
+	}
+
+	static float TextComponent_GetLineSpacing(UUID entityID)
+	{
+		Scene* scene = ScriptEngine::GetSceneContext();
+		LS_CORE_ASSERT(scene);
+		Entity entity = scene->GetEntityByUUID(entityID);
+		LS_CORE_ASSERT(entity);
+		LS_CORE_ASSERT(entity.HasComponent<TextComponent>());
+
+		auto& tc = entity.GetComponent<TextComponent>();
+		return tc.LineSpacing;
+	}
+
+	static void TextComponent_SetLineSpacing(UUID entityID, float lineSpacing)
+	{
+		Scene* scene = ScriptEngine::GetSceneContext();
+		LS_CORE_ASSERT(scene);
+		Entity entity = scene->GetEntityByUUID(entityID);
+		LS_CORE_ASSERT(entity);
+		LS_CORE_ASSERT(entity.HasComponent<TextComponent>());
+
+		auto& tc = entity.GetComponent<TextComponent>();
+		tc.LineSpacing = lineSpacing;
+	}
+
 	static bool Input_IsKeyDown(KeyCode keyCode)
 	{
 		return Input::IsKeyPressed(keyCode);
@@ -209,6 +315,15 @@ namespace Lisa {
 		LS_ADD_INTERNAL_CALL(Rigidbody2DComponent_ApplyLinearImpulseToCenter);
 		LS_ADD_INTERNAL_CALL(Rigidbody2DComponent_GetLinearVelocity);
 		LS_ADD_INTERNAL_CALL(Rigidbody2DComponent_SetType);
+
+		LS_ADD_INTERNAL_CALL(TextComponent_GetText);
+		LS_ADD_INTERNAL_CALL(TextComponent_SetText);
+		LS_ADD_INTERNAL_CALL(TextComponent_GetColor);
+		LS_ADD_INTERNAL_CALL(TextComponent_SetColor);
+		LS_ADD_INTERNAL_CALL(TextComponent_GetKerning);
+		LS_ADD_INTERNAL_CALL(TextComponent_SetKerning);
+		LS_ADD_INTERNAL_CALL(TextComponent_GetLineSpacing);
+		LS_ADD_INTERNAL_CALL(TextComponent_SetLineSpacing);
 
 		LS_ADD_INTERNAL_CALL(Input_IsKeyDown);
 	}

@@ -21,7 +21,8 @@
     <OutputPath>..\Lizzy\Resources\Scripts\</OutputPath>
     <BaseIntermediateOutputPath>..\Lizzy\Resources\Scripts\Intermediates\Debug\</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)</IntermediateOutputPath>
-    <DefineConstants></DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -33,7 +34,8 @@
     <OutputPath>..\Lizzy\Resources\Scripts\</OutputPath>
     <BaseIntermediateOutputPath>..\Lizzy\Resources\Scripts\Intermediates\Release\</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)</IntermediateOutputPath>
-    <DefineConstants></DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -45,7 +47,8 @@
     <OutputPath>..\Lizzy\Resources\Scripts\</OutputPath>
     <BaseIntermediateOutputPath>..\Lizzy\Resources\Scripts\Intermediates\Dist\</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)</IntermediateOutputPath>
-    <DefineConstants></DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -62,6 +65,7 @@
     <Compile Include="Source\Lisa\Scene\Components.cs" />
     <Compile Include="Source\Lisa\Scene\Entity.cs" />
     <Compile Include="Source\Lisa\Vector2.cs" />
+    <Compile Include="Source\Lisa\Vector4.cs" />
     <Compile Include="Source\Lisa\Vector3.cs" />
   </ItemGroup>
   <ItemGroup>
